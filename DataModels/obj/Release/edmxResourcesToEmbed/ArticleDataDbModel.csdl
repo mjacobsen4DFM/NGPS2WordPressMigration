@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ArticleDataDbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ArticleDataDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="articles" EntityType="ArticleDataDbModel.article" />
+    <EntitySet Name="article_lock" EntityType="ArticleDataDbModel.article_lock" />
+    <EntitySet Name="articleEditOrgs" EntityType="ArticleDataDbModel.articleEditOrg" />
+    <EntitySet Name="assets" EntityType="ArticleDataDbModel.asset" />
+    <EntitySet Name="Exceptions" EntityType="ArticleDataDbModel.Exception" />
+    <EntitySet Name="htmlHoldRules" EntityType="ArticleDataDbModel.htmlHoldRule" />
+    <EntitySet Name="Images" EntityType="ArticleDataDbModel.Image" />
+    <EntitySet Name="image_tracker" EntityType="ArticleDataDbModel.image_tracker" />
+    <EntitySet Name="logstatements" EntityType="ArticleDataDbModel.logstatement" />
+    <EntitySet Name="MigrationErrors" EntityType="ArticleDataDbModel.MigrationError" />
+    <EntitySet Name="profiles" EntityType="ArticleDataDbModel.profile" />
+    <EntitySet Name="saxo_article" EntityType="ArticleDataDbModel.saxo_article" />
+    <EntitySet Name="saxo_gallery" EntityType="ArticleDataDbModel.saxo_gallery" />
+    <EntitySet Name="saxo_image" EntityType="ArticleDataDbModel.saxo_image" />
+    <EntitySet Name="saxo_pubMap" EntityType="ArticleDataDbModel.saxo_pubMap" />
+    <EntitySet Name="sectionAnchorMaps" EntityType="ArticleDataDbModel.sectionAnchorMap" />
+    <EntitySet Name="SessionErrors" EntityType="ArticleDataDbModel.SessionError" />
+    <EntitySet Name="tracksessions" EntityType="ArticleDataDbModel.tracksession" />
+    <AssociationSet Name="FK_Exception_SessionError" Association="ArticleDataDbModel.FK_Exception_SessionError">
+      <End Role="SessionError" EntitySet="SessionErrors" />
+      <End Role="Exception" EntitySet="Exceptions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="article">
+    <Key>
+      <PropertyRef Name="article_uid" />
+    </Key>
+    <Property Name="siteid" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="category" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="anchor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="startdate" Type="DateTime" Nullable="false" />
+    <Property Name="enddate" Type="DateTime" />
+    <Property Name="heading" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="body" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="relatedArticles" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="summary" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="byline" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="subtitle" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="seodescription" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="keyword" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="imagecount" Type="Int32" />
+    <Property Name="origsite" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="displaygroup" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="article_lock">
+    <Key>
+      <PropertyRef Name="article_uid" />
+    </Key>
+    <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="locked" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="articleEditOrg">
+    <Key>
+      <PropertyRef Name="article_uid" />
+    </Key>
+    <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="heading" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="summary" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="byline" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="body" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ts" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="asset">
+    <Key>
+      <PropertyRef Name="article_uid" />
+      <PropertyRef Name="asset_uid" />
+    </Key>
+    <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="asset_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="asset_type" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Exception">
+    <Key>
+      <PropertyRef Name="ExceptionID" />
+    </Key>
+    <Property Name="ExceptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExceptionLevel" Type="Int32" Nullable="false" />
+    <Property Name="SessionErrorID" Type="Int32" Nullable="false" />
+    <Property Name="Source" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="StackTrace" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="Message" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="Machine" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TargetSite" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ts" Type="DateTime" />
+    <NavigationProperty Name="SessionError" Relationship="ArticleDataDbModel.FK_Exception_SessionError" FromRole="Exception" ToRole="SessionError" />
+  </EntityType>
+  <EntityType Name="htmlHoldRule">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="htmltag" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="asset_uid" />
+    </Key>
+    <Property Name="asset_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="imagepath" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="position" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="width" Type="Int32" />
+    <Property Name="height" Type="Int32" />
+    <Property Name="media_type" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="caption" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="filesize" Type="Int32" />
+  </EntityType>
+  <EntityType Name="image_tracker">
+    <Key>
+      <PropertyRef Name="article_uid" />
+      <PropertyRef Name="asset_uid" />
+    </Key>
+    <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="asset_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="siteid" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="soft_delete" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="logstatement">
+    <Key>
+      <PropertyRef Name="article_uid" />
+      <PropertyRef Name="statement" />
+      <PropertyRef Name="ts" />
+    </Key>
+    <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="statement" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ts" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MigrationError">
+    <Key>
+      <PropertyRef Name="article_uid" />
+    </Key>
+    <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="myMessage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ts" Type="DateTime" />
+    <Property Type="Int32" Name="errortype" />
+  </EntityType>
+  <EntityType Name="profile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="uri" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="childcount" Type="Int32" Nullable="false" />
+    <Property Name="childrenuri" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="fieldname" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="treelevel" Type="Int32" Nullable="false" />
+    <Property Name="parentid" Type="Int32" Nullable="false" />
+    <Property Name="rootid" Type="Int32" Nullable="false" />
+    <Property Type="Int32" Name="realid" />
+  </EntityType>
+  <EntityType Name="saxo_article">
+    <Key>
+      <PropertyRef Name="article_uid" />
+      <PropertyRef Name="siteid" />
+      <PropertyRef Name="xmldata" />
+    </Key>
+    <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="siteid" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="destination_siteid" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="xmldata" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="viewuri" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="storyurl" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="saxo_gallery">
+    <Key>
+      <PropertyRef Name="article_uid" />
+      <PropertyRef Name="gallery_uid" />
+    </Key>
+    <Property Name="destination_siteid" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="gallery_uid" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="similarity" Type="Double" />
+    <Property Name="edit" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="saxo_image">
+    <Key>
+      <PropertyRef Name="asset_uid" />
+      <PropertyRef Name="url" />
+    </Key>
+    <Property Name="asset_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="url" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="destination_siteid" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="saxo_pubMap">
+    <Key>
+      <PropertyRef Name="siteid" />
+    </Key>
+    <Property Name="siteid" Type="Int32" Nullable="false" />
+    <Property Name="pubname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="destination_siteid" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OWStarget" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="OWSViewSearch" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="OWSViewReplace" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="saxoname" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="taxonomyPubId" />
+    <Property Type="String" Name="sectionmapcomplete" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sectionAnchorMap">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="siteid" Type="Int32" Nullable="false" />
+    <Property Name="sectionAnchor" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="sectionName" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="ProfileId" Type="Int32" Nullable="false" />
+    <Property Name="ProfileId2" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SessionError">
+    <Key>
+      <PropertyRef Name="SessionErrorID" />
+    </Key>
+    <Property Name="SessionErrorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RequestMethod" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="ServerPort" Type="Int32" />
+    <Property Name="HTTPS" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="LocalAddr" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="HostAddress" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="UserAgent" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="URL" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="CustomerRefID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="FormData" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="AllHTTP" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="InsertDate" Type="DateTime" Nullable="false" />
+    <Property Name="IsCookieLess" Type="Boolean" />
+    <Property Name="IsNewSession" Type="Boolean" />
+    <NavigationProperty Name="Exceptions" Relationship="ArticleDataDbModel.FK_Exception_SessionError" FromRole="SessionError" ToRole="Exception" />
+  </EntityType>
+  <EntityType Name="tracksession">
+    <Key>
+      <PropertyRef Name="sid" />
+      <PropertyRef Name="xmldocument" />
+      <PropertyRef Name="ts" />
+    </Key>
+    <Property Name="sid" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="xmldocument" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ts" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Exception_SessionError">
+    <End Role="SessionError" Type="ArticleDataDbModel.SessionError" Multiplicity="1" />
+    <End Role="Exception" Type="ArticleDataDbModel.Exception" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SessionError">
+        <PropertyRef Name="SessionErrorID" />
+      </Principal>
+      <Dependent Role="Exception">
+        <PropertyRef Name="SessionErrorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

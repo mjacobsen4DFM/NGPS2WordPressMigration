@@ -1,0 +1,54 @@
+C:\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DataAuthentication.dll
+C:\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DataAuthentication.pdb
+C:\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DataAuthentication.xml
+C:\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DbCommon.dll
+C:\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\OWC.dll
+C:\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DbCommon.pdb
+C:\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DbCommon.xml
+C:\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\OWC.pdb
+C:\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.Resources.resources
+C:\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.dll
+C:\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.xml
+C:\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.pdb
+C:\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.vbprojResolveAssemblyReference.cache
+C:\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.vbproj.GenerateResource.Cache
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DataAuthentication.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DataAuthentication.pdb
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DataAuthentication.xml
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DbCommon.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\OWC.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DbCommon.pdb
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DbCommon.xml
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\OWC.pdb
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.vbprojResolveAssemblyReference.cache
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.Resources.resources
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.vbproj.GenerateResource.Cache
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.xml
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DataAuthentication.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DataAuthentication.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DataAuthentication.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DbCommon.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\OWC.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DbCommon.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\OWC.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.vbprojResolveAssemblyReference.cache
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.Resources.resources
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.vbproj.GenerateResource.Cache
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\obj\Debug\DataAuthentication.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataAuthentication\bin\Debug\DbCommon.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\bin\Debug\DataAuthentication.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\bin\Debug\DataAuthentication.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\bin\Debug\DataAuthentication.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\bin\Debug\DbCommon.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\bin\Debug\DbCommon.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\bin\Debug\DbCommon.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\obj\Debug\DataAuthentication.vbprojResolveAssemblyReference.cache
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\obj\Debug\DataAuthentication.Resources.resources
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\obj\Debug\DataAuthentication.vbproj.GenerateResource.Cache
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\obj\Debug\DataAuthentication.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\obj\Debug\DataAuthentication.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\obj\Debug\DataAuthentication.pdb

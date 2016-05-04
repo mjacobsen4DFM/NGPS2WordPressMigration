@@ -1,0 +1,94 @@
+C:\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\BusinessRule.dll
+C:\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\BusinessRule.pdb
+C:\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\BusinessRule.xml
+C:\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DataAuthentication.dll
+C:\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\OWC.dll
+C:\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\UncAccess.dll
+C:\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DbCommon.dll
+C:\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DataAuthentication.pdb
+C:\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DataAuthentication.xml
+C:\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\OWC.pdb
+C:\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\UncAccess.pdb
+C:\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DbCommon.pdb
+C:\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DbCommon.xml
+C:\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.Resources.resources
+C:\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.dll
+C:\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.xml
+C:\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.pdb
+C:\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.vbprojResolveAssemblyReference.cache
+C:\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.vbproj.GenerateResource.Cache
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\BusinessRule.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\BusinessRule.pdb
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\BusinessRule.xml
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DataAuthentication.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\OWC.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\UncAccess.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DbCommon.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DataAuthentication.pdb
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DataAuthentication.xml
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\OWC.pdb
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\UncAccess.pdb
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DbCommon.pdb
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DbCommon.xml
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.vbprojResolveAssemblyReference.cache
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.Resources.resources
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.vbproj.GenerateResource.Cache
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.xml
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.pdb
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\WordPressSharp.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\CookComputing.XmlRpcV2.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\WordPressSharp.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\BusinessRule.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\BusinessRule.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\BusinessRule.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DataAuthentication.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\OWC.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\UncAccess.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\WordPressSharp.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DbCommon.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\CookComputing.XmlRpcV2.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DataAuthentication.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DataAuthentication.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\OWC.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\UncAccess.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\WordPressSharp.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DbCommon.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.vbprojResolveAssemblyReference.cache
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.Resources.resources
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.vbproj.GenerateResource.Cache
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\DbCommon.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\WordPressExtension.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\WordPressExtension.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\WordPressExtension.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\WordPressClient.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\WordPressClient.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\BusinessRule\obj\Debug\BusinessRule.wpResources.resources
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\BusinessRule.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\BusinessRule.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\BusinessRule.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\DataAuthentication.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\UncAccess.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\WordPressClient.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\DbCommon.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\DataAuthentication.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\DataAuthentication.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\UncAccess.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\WordPressClient.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\DbCommon.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\DbCommon.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\obj\Debug\BusinessRule.vbprojResolveAssemblyReference.cache
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\obj\Debug\BusinessRule.Resources.resources
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\obj\Debug\BusinessRule.wpResources.resources
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\obj\Debug\BusinessRule.vbproj.GenerateResource.Cache
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\obj\Debug\BusinessRule.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\obj\Debug\BusinessRule.xml
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\obj\Debug\BusinessRule.pdb

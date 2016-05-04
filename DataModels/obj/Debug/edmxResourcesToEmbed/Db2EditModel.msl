@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="livee_11ModelStoreContainer" CdmEntityContainer="livee_11Entities">
+    <EntitySetMapping Name="ARTICLEs">
+      <EntityTypeMapping TypeName="livee_11Model.ARTICLE">
+        <MappingFragment StoreEntitySet="ARTICLE">
+          <ScalarProperty Name="CONTENT_ITEM_UID" ColumnName="CONTENT_ITEM_UID" />
+          <ScalarProperty Name="OVERLINE" ColumnName="OVERLINE" />
+          <ScalarProperty Name="SUBTITLE" ColumnName="SUBTITLE" />
+          <ScalarProperty Name="EDITION" ColumnName="EDITION" />
+          <ScalarProperty Name="BYLINE" ColumnName="BYLINE" />
+          <ScalarProperty Name="EMAIL_OF_AUTHOR" ColumnName="EMAIL_OF_AUTHOR" />
+          <ScalarProperty Name="SLUG" ColumnName="SLUG" />
+          <ScalarProperty Name="BODY" ColumnName="BODY" />
+          <ScalarProperty Name="ABSTRACT" ColumnName="ABSTRACT" />
+          <ScalarProperty Name="LINK_TEXT" ColumnName="LINK_TEXT" />
+          <ScalarProperty Name="CONTRIB_PERSON_UID" ColumnName="CONTRIB_PERSON_UID" />
+          <ScalarProperty Name="PAGING_TYPE" ColumnName="PAGING_TYPE" />
+          <ScalarProperty Name="ARTICLE_VIEW_UCODE" ColumnName="ARTICLE_VIEW_UCODE" />
+          <ScalarProperty Name="SHOW_RELATED_PACKAGES" ColumnName="SHOW_RELATED_PACKAGES" />
+          <ScalarProperty Name="LINK_IMAGE_UID" ColumnName="LINK_IMAGE_UID" />
+          <ScalarProperty Name="EMBEDDED_AD_FLAG" ColumnName="EMBEDDED_AD_FLAG" />
+          <ScalarProperty Name="OVERRIDE_URL" ColumnName="OVERRIDE_URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTENT_AUTHOR">
+      <EntityTypeMapping TypeName="livee_11Model.CONTENT_AUTHOR">
+        <MappingFragment StoreEntitySet="CONTENT_AUTHOR">
+          <ScalarProperty Name="CONTENT_AUTHOR_UID" ColumnName="CONTENT_AUTHOR_UID" />
+          <ScalarProperty Name="AUTHOR_NAME" ColumnName="AUTHOR_NAME" />
+          <ScalarProperty Name="AUTHOR_EMAIL" ColumnName="AUTHOR_EMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTENT_GROUP">
+      <EntityTypeMapping TypeName="livee_11Model.CONTENT_GROUP">
+        <MappingFragment StoreEntitySet="CONTENT_GROUP">
+          <ScalarProperty Name="CONTENT_GROUP_UID" ColumnName="CONTENT_GROUP_UID" />
+          <ScalarProperty Name="CONTENT_GROUP_CODE" ColumnName="CONTENT_GROUP_CODE" />
+          <ScalarProperty Name="FULL_PATH" ColumnName="FULL_PATH" />
+          <ScalarProperty Name="STATE_UCODE" ColumnName="STATE_UCODE" />
+          <ScalarProperty Name="STATE_SET_DATE" ColumnName="STATE_SET_DATE" />
+          <ScalarProperty Name="PARENT_CONTENT_GROUP_UID" ColumnName="PARENT_CONTENT_GROUP_UID" />
+          <ScalarProperty Name="CONTENT_GROUP_TYPE_UCODE" ColumnName="CONTENT_GROUP_TYPE_UCODE" />
+          <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="SITE_UID" ColumnName="SITE_UID" />
+          <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+          <ScalarProperty Name="LAUNCHED_DATE" ColumnName="LAUNCHED_DATE" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_PERSON_UID" ColumnName="CREATE_PERSON_UID" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_PERSON_UID" ColumnName="UPDATE_PERSON_UID" />
+          <ScalarProperty Name="DEPLOYED_FLAG" ColumnName="DEPLOYED_FLAG" />
+          <ScalarProperty Name="SORT_TYPE" ColumnName="SORT_TYPE" />
+          <ScalarProperty Name="LEAD_CICG_UID" ColumnName="LEAD_CICG_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTENT_GROUP_TYPE">
+      <EntityTypeMapping TypeName="livee_11Model.CONTENT_GROUP_TYPE">
+        <MappingFragment StoreEntitySet="CONTENT_GROUP_TYPE">
+          <ScalarProperty Name="CONTENT_GROUP_TYPE_UCODE" ColumnName="CONTENT_GROUP_TYPE_UCODE" />
+          <ScalarProperty Name="TYPE_NAME" ColumnName="TYPE_NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTENT_ITEM">
+      <EntityTypeMapping TypeName="livee_11Model.CONTENT_ITEM">
+        <MappingFragment StoreEntitySet="CONTENT_ITEM">
+          <ScalarProperty Name="CONTENT_ITEM_UID" ColumnName="CONTENT_ITEM_UID" />
+          <ScalarProperty Name="VIEWABLE_TYPE_UCODE" ColumnName="VIEWABLE_TYPE_UCODE" />
+          <ScalarProperty Name="SCHEDULE_UID" ColumnName="SCHEDULE_UID" />
+          <ScalarProperty Name="SITE_UID" ColumnName="SITE_UID" />
+          <ScalarProperty Name="SHARE_GLOBAL_FLAG" ColumnName="SHARE_GLOBAL_FLAG" />
+          <ScalarProperty Name="SHAREABLE_FLAG" ColumnName="SHAREABLE_FLAG" />
+          <ScalarProperty Name="EXPORTABLE_FLAG" ColumnName="EXPORTABLE_FLAG" />
+          <ScalarProperty Name="COPYABLE_FLAG" ColumnName="COPYABLE_FLAG" />
+          <ScalarProperty Name="STATE_UCODE" ColumnName="STATE_UCODE" />
+          <ScalarProperty Name="STATE_SET_DATE" ColumnName="STATE_SET_DATE" />
+          <ScalarProperty Name="KEYWORD" ColumnName="KEYWORD" />
+          <ScalarProperty Name="SOURCE_TYPE_UCODE" ColumnName="SOURCE_TYPE_UCODE" />
+          <ScalarProperty Name="ORIG_CONTENT_ITEM_UID" ColumnName="ORIG_CONTENT_ITEM_UID" />
+          <ScalarProperty Name="CONTENT_TYPE_UID" ColumnName="CONTENT_TYPE_UID" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_PERSON_UID" ColumnName="UPDATE_PERSON_UID" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_PERSON_UID" ColumnName="CREATE_PERSON_UID" />
+          <ScalarProperty Name="CONTENT_TITLE" ColumnName="CONTENT_TITLE" />
+          <ScalarProperty Name="CONTENT_DESC" ColumnName="CONTENT_DESC" />
+          <ScalarProperty Name="VIGNETTE_CONTENT_GUID" ColumnName="VIGNETTE_CONTENT_GUID" />
+          <ScalarProperty Name="CPS_UID" ColumnName="CPS_UID" />
+          <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+          <ScalarProperty Name="LAUNCHED_DATE" ColumnName="LAUNCHED_DATE" />
+          <ScalarProperty Name="DISPLAY_DATE" ColumnName="DISPLAY_DATE" />
+          <ScalarProperty Name="SHARE_ASSOC_MEDIA_FLAG" ColumnName="SHARE_ASSOC_MEDIA_FLAG" />
+          <ScalarProperty Name="DEPLOYED_FLAG" ColumnName="DEPLOYED_FLAG" />
+          <ScalarProperty Name="EXPORTED_DATE" ColumnName="EXPORTED_DATE" />
+          <ScalarProperty Name="EXPORTED_STATUS" ColumnName="EXPORTED_STATUS" />
+          <ScalarProperty Name="NO_THUMBNAIL" ColumnName="NO_THUMBNAIL" />
+          <ScalarProperty Name="KEEP_INDEFINITE_FLAG" ColumnName="KEEP_INDEFINITE_FLAG" />
+          <ScalarProperty Name="THIRDPARTY_ID" ColumnName="THIRDPARTY_ID" />
+          <ScalarProperty Name="THIRDPARTY_VERSION" ColumnName="THIRDPARTY_VERSION" />
+          <ScalarProperty Name="THIRDPARTY_PUBLISHING_STATUS" ColumnName="THIRDPARTY_PUBLISHING_STATUS" />
+          <ScalarProperty Name="FIRST_PUBLICATION_TIMESTAMP" ColumnName="FIRST_PUBLICATION_TIMESTAMP" />
+          <ScalarProperty Name="ORIGINATING_SOURCE" ColumnName="ORIGINATING_SOURCE" />
+          <ScalarProperty Name="ICON_TYPE_UCODE" ColumnName="ICON_TYPE_UCODE" />
+          <ScalarProperty Name="SHOW_MAP_FLAG" ColumnName="SHOW_MAP_FLAG" />
+          <ScalarProperty Name="THIRDPARTY_PROVIDER_ID" ColumnName="THIRDPARTY_PROVIDER_ID" />
+          <ScalarProperty Name="PREMIUM_START_DATE" ColumnName="PREMIUM_START_DATE" />
+          <ScalarProperty Name="CONTENT_LICENSE_UID" ColumnName="CONTENT_LICENSE_UID" />
+          <ScalarProperty Name="SECTION_ANCHOR_UID" ColumnName="SECTION_ANCHOR_UID" />
+          <ScalarProperty Name="SEO_DESCRIPTIVE_TEXT" ColumnName="SEO_DESCRIPTIVE_TEXT" />
+          <ScalarProperty Name="MANUAL_SEO_DESCRIPTIVE_TEXT_FLAG" ColumnName="MANUAL_SEO_DESCRIPTIVE_TEXT_FLAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTENT_ITEM_CONTENT_GROUP">
+      <EntityTypeMapping TypeName="livee_11Model.CONTENT_ITEM_CONTENT_GROUP">
+        <MappingFragment StoreEntitySet="CONTENT_ITEM_CONTENT_GROUP">
+          <ScalarProperty Name="CONTENT_ITEM_CONTENT_GROUP_UID" ColumnName="CONTENT_ITEM_CONTENT_GROUP_UID" />
+          <ScalarProperty Name="CONTENT_GROUP_UID" ColumnName="CONTENT_GROUP_UID" />
+          <ScalarProperty Name="CONTENT_ITEM_UID" ColumnName="CONTENT_ITEM_UID" />
+          <ScalarProperty Name="SITE_UID" ColumnName="SITE_UID" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="ABSTRACT" ColumnName="ABSTRACT" />
+          <ScalarProperty Name="LINK_TEXT" ColumnName="LINK_TEXT" />
+          <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="DISPLAY_START_DATE" ColumnName="DISPLAY_START_DATE" />
+          <ScalarProperty Name="DISPLAY_END_DATE" ColumnName="DISPLAY_END_DATE" />
+          <ScalarProperty Name="DISPLAY_TITLE" ColumnName="DISPLAY_TITLE" />
+          <ScalarProperty Name="DISPLAY_SLUG" ColumnName="DISPLAY_SLUG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTENT_ITEM_REL">
+      <EntityTypeMapping TypeName="livee_11Model.CONTENT_ITEM_REL">
+        <MappingFragment StoreEntitySet="CONTENT_ITEM_REL">
+          <ScalarProperty Name="CONTENT_ITEM_REL_UID" ColumnName="CONTENT_ITEM_REL_UID" />
+          <ScalarProperty Name="CONTENT_ITEM_UID" ColumnName="CONTENT_ITEM_UID" />
+          <ScalarProperty Name="RELATED_CONTENT_ITEM_UID" ColumnName="RELATED_CONTENT_ITEM_UID" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="POSITION_UCODE" ColumnName="POSITION_UCODE" />
+          <ScalarProperty Name="SITE_UID" ColumnName="SITE_UID" />
+          <ScalarProperty Name="MEDIA_SIZE_TYPE_UCODE" ColumnName="MEDIA_SIZE_TYPE_UCODE" />
+          <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+          <ScalarProperty Name="ABSTRACT" ColumnName="ABSTRACT" />
+          <ScalarProperty Name="PHOTO_CREDIT" ColumnName="PHOTO_CREDIT" />
+          <ScalarProperty Name="IS_DEFAULT_THUMBNAIL" ColumnName="IS_DEFAULT_THUMBNAIL" />
+          <ScalarProperty Name="SHOW_IN_VIEWER" ColumnName="SHOW_IN_VIEWER" />
+          <ScalarProperty Name="ORDER" ColumnName="ORDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTENT_SECTION">
+      <EntityTypeMapping TypeName="livee_11Model.CONTENT_SECTION">
+        <MappingFragment StoreEntitySet="CONTENT_SECTION">
+          <ScalarProperty Name="CONTENT_SECTION_UID" ColumnName="CONTENT_SECTION_UID" />
+          <ScalarProperty Name="SECTION_ITEM_UID" ColumnName="SECTION_ITEM_UID" />
+          <ScalarProperty Name="CONTENT_ITEM_UID" ColumnName="CONTENT_ITEM_UID" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="ABSTRACT" ColumnName="ABSTRACT" />
+          <ScalarProperty Name="LINK_TEXT" ColumnName="LINK_TEXT" />
+          <ScalarProperty Name="AD_POSITION" ColumnName="AD_POSITION" />
+          <ScalarProperty Name="DISPLAY_SECTION_FLAG" ColumnName="DISPLAY_SECTION_FLAG" />
+          <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+          <ScalarProperty Name="SITE_UID" ColumnName="SITE_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FREEFORMs">
+      <EntityTypeMapping TypeName="livee_11Model.FREEFORM">
+        <MappingFragment StoreEntitySet="FREEFORM">
+          <ScalarProperty Name="CONTENT_ITEM_UID" ColumnName="CONTENT_ITEM_UID" />
+          <ScalarProperty Name="FREEFORM_HTML" ColumnName="FREEFORM_HTML" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMAGEs">
+      <EntityTypeMapping TypeName="livee_11Model.IMAGE">
+        <MappingFragment StoreEntitySet="IMAGE">
+          <ScalarProperty Name="CONTENT_ITEM_UID" ColumnName="CONTENT_ITEM_UID" />
+          <ScalarProperty Name="FILE_SIZE" ColumnName="FILE_SIZE" />
+          <ScalarProperty Name="HEIGHT" ColumnName="HEIGHT" />
+          <ScalarProperty Name="WIDTH" ColumnName="WIDTH" />
+          <ScalarProperty Name="ALT" ColumnName="ALT" />
+          <ScalarProperty Name="CAPTION" ColumnName="CAPTION" />
+          <ScalarProperty Name="IMAGE_URL" ColumnName="IMAGE_URL" />
+          <ScalarProperty Name="FORMAT_TYPE_UCODE" ColumnName="FORMAT_TYPE_UCODE" />
+          <ScalarProperty Name="MEDIA_SIZE_TYPE_UCODE" ColumnName="MEDIA_SIZE_TYPE_UCODE" />
+          <ScalarProperty Name="PHOTO_CREDIT" ColumnName="PHOTO_CREDIT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SITE_URL">
+      <EntityTypeMapping TypeName="livee_11Model.SITE_URL">
+        <MappingFragment StoreEntitySet="SITE_URL">
+          <ScalarProperty Name="SITE_URL_UID" ColumnName="SITE_URL_UID" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="SITE_NAME" ColumnName="SITE_NAME" />
+          <ScalarProperty Name="SITE_URL_TYPE_UCODE" ColumnName="SITE_URL_TYPE_UCODE" />
+          <ScalarProperty Name="SITE_UID" ColumnName="SITE_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDF_VIEW">
+      <EntityTypeMapping TypeName="livee_11Model.PDF_VIEW">
+        <MappingFragment StoreEntitySet="PDF_VIEW">
+          <ScalarProperty Name="CREDIT" ColumnName="CREDIT" />
+          <ScalarProperty Name="ALT" ColumnName="ALT" />
+          <ScalarProperty Name="CAPTION" ColumnName="CAPTION" />
+          <ScalarProperty Name="FORMAT_TYPE_UCODE" ColumnName="FORMAT_TYPE_UCODE" />
+          <ScalarProperty Name="FILE_SIZE" ColumnName="FILE_SIZE" />
+          <ScalarProperty Name="BINARY_FILENAME" ColumnName="BINARY_FILENAME" />
+          <ScalarProperty Name="BINARY_URL" ColumnName="BINARY_URL" />
+          <ScalarProperty Name="CONTENT_ITEM_UID" ColumnName="CONTENT_ITEM_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SECTION_ITEM">
+      <EntityTypeMapping TypeName="livee_11Model.SECTION_ITEM">
+        <MappingFragment StoreEntitySet="SECTION_ITEM">
+          <ScalarProperty Name="CUSTOM_CONTENT_CATEGORIES" ColumnName="CUSTOM_CONTENT_CATEGORIES" />
+          <ScalarProperty Name="YAHOO_TAXONOMY_UID" ColumnName="YAHOO_TAXONOMY_UID" />
+          <ScalarProperty Name="YAHOO_CONTENT_TYPE" ColumnName="YAHOO_CONTENT_TYPE" />
+          <ScalarProperty Name="YAHOO_AD_TYPE" ColumnName="YAHOO_AD_TYPE" />
+          <ScalarProperty Name="INCLUDE_IN_SEARCH" ColumnName="INCLUDE_IN_SEARCH" />
+          <ScalarProperty Name="SCRIPT_WELL" ColumnName="SCRIPT_WELL" />
+          <ScalarProperty Name="BOOST" ColumnName="BOOST" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="KEYWORD" ColumnName="KEYWORD" />
+          <ScalarProperty Name="DEPLOYED_FLAG" ColumnName="DEPLOYED_FLAG" />
+          <ScalarProperty Name="ARTICLE_AD_PATH_UID" ColumnName="ARTICLE_AD_PATH_UID" />
+          <ScalarProperty Name="SECTION_AD_PATH_UID" ColumnName="SECTION_AD_PATH_UID" />
+          <ScalarProperty Name="CONTENT_GROUP_UID" ColumnName="CONTENT_GROUP_UID" />
+          <ScalarProperty Name="UPDATE_PERSON_UID" ColumnName="UPDATE_PERSON_UID" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="CREATE_PERSON_UID" ColumnName="CREATE_PERSON_UID" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="HOME_SECTION_FLAG" ColumnName="HOME_SECTION_FLAG" />
+          <ScalarProperty Name="NAVIGABLE_FLAG" ColumnName="NAVIGABLE_FLAG" />
+          <ScalarProperty Name="VANITY_URL" ColumnName="VANITY_URL" />
+          <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="PARENT_SECTION_UID" ColumnName="PARENT_SECTION_UID" />
+          <ScalarProperty Name="SECTION_NAME" ColumnName="SECTION_NAME" />
+          <ScalarProperty Name="STATE_SET_DATE" ColumnName="STATE_SET_DATE" />
+          <ScalarProperty Name="STATE_UCODE" ColumnName="STATE_UCODE" />
+          <ScalarProperty Name="DEFAULT_ARTICLE_PAGE_UID" ColumnName="DEFAULT_ARTICLE_PAGE_UID" />
+          <ScalarProperty Name="VIEWABLE_TYPE_UCODE" ColumnName="VIEWABLE_TYPE_UCODE" />
+          <ScalarProperty Name="SITE_UID" ColumnName="SITE_UID" />
+          <ScalarProperty Name="SECTION_CODE" ColumnName="SECTION_CODE" />
+          <ScalarProperty Name="SECTION_ITEM_UID" ColumnName="SECTION_ITEM_UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

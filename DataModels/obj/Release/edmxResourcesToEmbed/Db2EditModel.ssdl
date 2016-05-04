@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="livee_11Model.Store" Alias="Self" Provider="IBM.Data.DB2" ProviderManifestToken="DB2/LINUXX8664, 09.07.0005, 473759, 0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="livee_11ModelStoreContainer">
+    <EntitySet Name="ARTICLE" EntityType="livee_11Model.Store.ARTICLE" store:Type="Tables" Schema="NGPS" />
+    <EntitySet Name="CONTENT_AUTHOR" EntityType="livee_11Model.Store.CONTENT_AUTHOR" store:Type="Tables" Schema="NGPS" />
+    <EntitySet Name="CONTENT_GROUP" EntityType="livee_11Model.Store.CONTENT_GROUP" store:Type="Tables" Schema="NGPS" />
+    <EntitySet Name="CONTENT_GROUP_TYPE" EntityType="livee_11Model.Store.CONTENT_GROUP_TYPE" store:Type="Tables" Schema="NGPS" />
+    <EntitySet Name="CONTENT_ITEM" EntityType="livee_11Model.Store.CONTENT_ITEM" store:Type="Tables" Schema="NGPS" />
+    <EntitySet Name="CONTENT_ITEM_CONTENT_GROUP" EntityType="livee_11Model.Store.CONTENT_ITEM_CONTENT_GROUP" store:Type="Tables" Schema="NGPS" />
+    <EntitySet Name="CONTENT_ITEM_REL" EntityType="livee_11Model.Store.CONTENT_ITEM_REL" store:Type="Tables" Schema="NGPS" />
+    <EntitySet Name="CONTENT_SECTION" EntityType="livee_11Model.Store.CONTENT_SECTION" store:Type="Tables" Schema="NGPS" />
+    <EntitySet Name="FREEFORM" EntityType="livee_11Model.Store.FREEFORM" store:Type="Tables" Schema="NGPS" />
+    <EntitySet Name="IMAGE" EntityType="livee_11Model.Store.IMAGE" store:Type="Tables" Schema="NGPS" />
+    <EntitySet Name="SECTION_ITEM" EntityType="livee_11Model.Store.SECTION_ITEM" store:Type="Tables" Schema="NGPS" />
+    <EntitySet Name="SITE_URL" EntityType="livee_11Model.Store.SITE_URL" store:Type="Tables" Schema="NGPS" />
+    <EntitySet Name="PDF_VIEW" EntityType="livee_11Model.Store.PDF_VIEW" store:Type="Views" store:Schema="NGPS" store:Name="PDF_VIEW">
+      <DefiningQuery>SELECT 
+      PDF_VIEW.CONTENT_ITEM_UID AS CONTENT_ITEM_UID, 
+      PDF_VIEW.BINARY_URL AS BINARY_URL, 
+      PDF_VIEW.BINARY_FILENAME AS BINARY_FILENAME, 
+      PDF_VIEW.FILE_SIZE AS FILE_SIZE, 
+      PDF_VIEW.FORMAT_TYPE_UCODE AS FORMAT_TYPE_UCODE, 
+      PDF_VIEW.CAPTION AS CAPTION, 
+      PDF_VIEW.ALT AS ALT, 
+      PDF_VIEW.CREDIT AS CREDIT
+      FROM NGPS.PDF_VIEW AS PDF_VIEW</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="SQL050428131840680" Association="livee_11Model.Store.SQL050428131840680">
+      <End Role="CONTENT_GROUP_TYPE" EntitySet="CONTENT_GROUP_TYPE" />
+      <End Role="CONTENT_GROUP" EntitySet="CONTENT_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="SQL060228122718030" Association="livee_11Model.Store.SQL060228122718030">
+      <End Role="CONTENT_ITEM" EntitySet="CONTENT_ITEM" />
+      <End Role="ARTICLE" EntitySet="ARTICLE" />
+    </AssociationSet>
+    <AssociationSet Name="SQL060228122829530" Association="livee_11Model.Store.SQL060228122829530">
+      <End Role="CONTENT_ITEM" EntitySet="CONTENT_ITEM" />
+      <End Role="CONTENT_ITEM1" EntitySet="CONTENT_ITEM" />
+    </AssociationSet>
+    <AssociationSet Name="SQL060228122936340" Association="livee_11Model.Store.SQL060228122936340">
+      <End Role="CONTENT_ITEM" EntitySet="CONTENT_ITEM" />
+      <End Role="CONTENT_ITEM_CONTENT_GROUP" EntitySet="CONTENT_ITEM_CONTENT_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="SQL060228123011540" Association="livee_11Model.Store.SQL060228123011540">
+      <End Role="CONTENT_ITEM" EntitySet="CONTENT_ITEM" />
+      <End Role="CONTENT_ITEM_REL" EntitySet="CONTENT_ITEM_REL" />
+    </AssociationSet>
+    <AssociationSet Name="SQL060228123016140" Association="livee_11Model.Store.SQL060228123016140">
+      <End Role="CONTENT_ITEM" EntitySet="CONTENT_ITEM" />
+      <End Role="CONTENT_ITEM_REL" EntitySet="CONTENT_ITEM_REL" />
+    </AssociationSet>
+    <AssociationSet Name="SQL060228123058700" Association="livee_11Model.Store.SQL060228123058700">
+      <End Role="CONTENT_SECTION" EntitySet="CONTENT_SECTION" />
+      <End Role="CONTENT_SECTION1" EntitySet="CONTENT_SECTION" />
+    </AssociationSet>
+    <AssociationSet Name="SQL060228123348090" Association="livee_11Model.Store.SQL060228123348090">
+      <End Role="CONTENT_ITEM" EntitySet="CONTENT_ITEM" />
+      <End Role="FREEFORM" EntitySet="FREEFORM" />
+    </AssociationSet>
+    <AssociationSet Name="SQL060228123408420" Association="livee_11Model.Store.SQL060228123408420">
+      <End Role="CONTENT_ITEM" EntitySet="CONTENT_ITEM" />
+      <End Role="IMAGE" EntitySet="IMAGE" />
+    </AssociationSet>
+    <AssociationSet Name="SQL060404143643350" Association="livee_11Model.Store.SQL060404143643350">
+      <End Role="SECTION_ITEM" EntitySet="SECTION_ITEM" />
+      <End Role="CONTENT_SECTION" EntitySet="CONTENT_SECTION" />
+    </AssociationSet>
+    <AssociationSet Name="SQL060404143754520" Association="livee_11Model.Store.SQL060404143754520">
+      <End Role="SECTION_ITEM" EntitySet="SECTION_ITEM" />
+      <End Role="SECTION_ITEM1" EntitySet="SECTION_ITEM" />
+    </AssociationSet>
+    <AssociationSet Name="SQL060404164054980" Association="livee_11Model.Store.SQL060404164054980">
+      <End Role="CONTENT_GROUP" EntitySet="CONTENT_GROUP" />
+      <End Role="CONTENT_GROUP1" EntitySet="CONTENT_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="SQL060404164112120" Association="livee_11Model.Store.SQL060404164112120">
+      <End Role="CONTENT_GROUP" EntitySet="CONTENT_GROUP" />
+      <End Role="CONTENT_ITEM_CONTENT_GROUP" EntitySet="CONTENT_ITEM_CONTENT_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="SQL060404164248270" Association="livee_11Model.Store.SQL060404164248270">
+      <End Role="CONTENT_GROUP" EntitySet="CONTENT_GROUP" />
+      <End Role="SECTION_ITEM" EntitySet="SECTION_ITEM" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ARTICLE">
+    <Key>
+      <PropertyRef Name="CONTENT_ITEM_UID" />
+    </Key>
+    <Property Name="CONTENT_ITEM_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="OVERLINE" Type="varchar" MaxLength="255" />
+    <Property Name="SUBTITLE" Type="varchar" MaxLength="255" />
+    <Property Name="EDITION" Type="varchar" MaxLength="50" />
+    <Property Name="BYLINE" Type="varchar" MaxLength="255" />
+    <Property Name="EMAIL_OF_AUTHOR" Type="varchar" MaxLength="128" />
+    <Property Name="SLUG" Type="varchar" MaxLength="255" />
+    <Property Name="BODY" Type="clob" Nullable="false" MaxLength="1048576" />
+    <Property Name="ABSTRACT" Type="varchar" MaxLength="4000" />
+    <Property Name="LINK_TEXT" Type="varchar" MaxLength="255" />
+    <Property Name="CONTRIB_PERSON_UID" Type="varchar" MaxLength="40" />
+    <Property Name="PAGING_TYPE" Type="int" Nullable="false" />
+    <Property Name="ARTICLE_VIEW_UCODE" Type="varchar" MaxLength="25" />
+    <Property Name="SHOW_RELATED_PACKAGES" Type="int" />
+    <Property Name="LINK_IMAGE_UID" Type="varchar" MaxLength="40" />
+    <Property Name="EMBEDDED_AD_FLAG" Type="int" />
+    <Property Name="OVERRIDE_URL" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="CONTENT_AUTHOR">
+    <Key>
+      <PropertyRef Name="CONTENT_AUTHOR_UID" />
+    </Key>
+    <Property Name="CONTENT_AUTHOR_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="AUTHOR_NAME" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="AUTHOR_EMAIL" Type="varchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="CONTENT_GROUP">
+    <Key>
+      <PropertyRef Name="CONTENT_GROUP_UID" />
+    </Key>
+    <Property Name="CONTENT_GROUP_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="CONTENT_GROUP_CODE" Type="varchar" MaxLength="25" />
+    <Property Name="FULL_PATH" Type="varchar" MaxLength="1000" />
+    <Property Name="STATE_UCODE" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="STATE_SET_DATE" Type="timestamp" Nullable="false" />
+    <Property Name="PARENT_CONTENT_GROUP_UID" Type="varchar" MaxLength="40" />
+    <Property Name="CONTENT_GROUP_TYPE_UCODE" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="GROUP_NAME" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="START_DATE" Type="timestamp" />
+    <Property Name="END_DATE" Type="timestamp" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="255" />
+    <Property Name="SITE_UID" Type="varchar" MaxLength="40" />
+    <Property Name="VERSION" Type="int" Nullable="false" />
+    <Property Name="LAUNCHED_DATE" Type="timestamp" />
+    <Property Name="CREATE_DATE" Type="timestamp" Nullable="false" />
+    <Property Name="CREATE_PERSON_UID" Type="varchar" MaxLength="40" />
+    <Property Name="UPDATE_DATE" Type="timestamp" Nullable="false" />
+    <Property Name="UPDATE_PERSON_UID" Type="varchar" MaxLength="40" />
+    <Property Name="DEPLOYED_FLAG" Type="int" />
+    <Property Name="SORT_TYPE" Type="smallint" Nullable="false" />
+    <Property Name="LEAD_CICG_UID" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="CONTENT_GROUP_TYPE">
+    <Key>
+      <PropertyRef Name="CONTENT_GROUP_TYPE_UCODE" />
+    </Key>
+    <Property Name="CONTENT_GROUP_TYPE_UCODE" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="TYPE_NAME" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CONTENT_ITEM">
+    <Key>
+      <PropertyRef Name="CONTENT_ITEM_UID" />
+    </Key>
+    <Property Name="CONTENT_ITEM_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="VIEWABLE_TYPE_UCODE" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="SCHEDULE_UID" Type="varchar" MaxLength="40" />
+    <Property Name="SITE_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="SHARE_GLOBAL_FLAG" Type="decimal" Nullable="false" Precision="1" />
+    <Property Name="SHAREABLE_FLAG" Type="decimal" Nullable="false" Precision="1" />
+    <Property Name="EXPORTABLE_FLAG" Type="decimal" Nullable="false" Precision="1" />
+    <Property Name="COPYABLE_FLAG" Type="decimal" Nullable="false" Precision="1" />
+    <Property Name="STATE_UCODE" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="STATE_SET_DATE" Type="timestamp" Nullable="false" />
+    <Property Name="KEYWORD" Type="varchar" MaxLength="255" />
+    <Property Name="SOURCE_TYPE_UCODE" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="ORIG_CONTENT_ITEM_UID" Type="varchar" MaxLength="40" />
+    <Property Name="CONTENT_TYPE_UID" Type="int" Nullable="false" />
+    <Property Name="START_DATE" Type="timestamp" />
+    <Property Name="END_DATE" Type="timestamp" />
+    <Property Name="UPDATE_DATE" Type="timestamp" Nullable="false" />
+    <Property Name="UPDATE_PERSON_UID" Type="varchar" MaxLength="40" />
+    <Property Name="CREATE_DATE" Type="timestamp" Nullable="false" />
+    <Property Name="CREATE_PERSON_UID" Type="varchar" MaxLength="40" />
+    <Property Name="CONTENT_TITLE" Type="varchar" Nullable="false" MaxLength="450" />
+    <Property Name="CONTENT_DESC" Type="varchar" MaxLength="255" />
+    <Property Name="VIGNETTE_CONTENT_GUID" Type="varchar" MaxLength="40" />
+    <Property Name="CPS_UID" Type="int" />
+    <Property Name="VERSION" Type="int" Nullable="false" />
+    <Property Name="LAUNCHED_DATE" Type="timestamp" />
+    <Property Name="DISPLAY_DATE" Type="timestamp" />
+    <Property Name="SHARE_ASSOC_MEDIA_FLAG" Type="decimal" Nullable="false" Precision="1" />
+    <Property Name="DEPLOYED_FLAG" Type="decimal" Nullable="false" Precision="1" />
+    <Property Name="EXPORTED_DATE" Type="timestamp" />
+    <Property Name="EXPORTED_STATUS" Type="smallint" />
+    <Property Name="NO_THUMBNAIL" Type="int" />
+    <Property Name="KEEP_INDEFINITE_FLAG" Type="decimal" Precision="1" />
+    <Property Name="THIRDPARTY_ID" Type="varchar" MaxLength="100" />
+    <Property Name="THIRDPARTY_VERSION" Type="varchar" MaxLength="20" />
+    <Property Name="THIRDPARTY_PUBLISHING_STATUS" Type="varchar" MaxLength="10" />
+    <Property Name="FIRST_PUBLICATION_TIMESTAMP" Type="timestamp" />
+    <Property Name="ORIGINATING_SOURCE" Type="varchar" MaxLength="100" />
+    <Property Name="ICON_TYPE_UCODE" Type="varchar" MaxLength="25" />
+    <Property Name="SHOW_MAP_FLAG" Type="decimal" Precision="1" />
+    <Property Name="THIRDPARTY_PROVIDER_ID" Type="varchar" MaxLength="25" />
+    <Property Name="PREMIUM_START_DATE" Type="timestamp" />
+    <Property Name="CONTENT_LICENSE_UID" Type="varchar" MaxLength="40" />
+    <Property Name="SECTION_ANCHOR_UID" Type="varchar" MaxLength="40" />
+    <Property Name="SEO_DESCRIPTIVE_TEXT" Type="varchar" MaxLength="450" />
+    <Property Name="MANUAL_SEO_DESCRIPTIVE_TEXT_FLAG" Type="decimal" Precision="1" />
+  </EntityType>
+  <EntityType Name="CONTENT_ITEM_CONTENT_GROUP">
+    <Key>
+      <PropertyRef Name="CONTENT_ITEM_CONTENT_GROUP_UID" />
+    </Key>
+    <Property Name="CONTENT_ITEM_CONTENT_GROUP_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="CONTENT_GROUP_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="CONTENT_ITEM_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="SITE_UID" Type="varchar" MaxLength="40" />
+    <Property Name="START_DATE" Type="timestamp" />
+    <Property Name="END_DATE" Type="timestamp" />
+    <Property Name="ORDER_ID" Type="int" />
+    <Property Name="TITLE" Type="varchar" MaxLength="255" />
+    <Property Name="ABSTRACT" Type="varchar" MaxLength="4000" />
+    <Property Name="LINK_TEXT" Type="varchar" MaxLength="255" />
+    <Property Name="VERSION" Type="int" Nullable="false" />
+    <Property Name="CREATE_DATE" Type="timestamp" Nullable="false" />
+    <Property Name="DISPLAY_START_DATE" Type="timestamp" />
+    <Property Name="DISPLAY_END_DATE" Type="timestamp" />
+    <Property Name="DISPLAY_TITLE" Type="varchar" MaxLength="255" />
+    <Property Name="DISPLAY_SLUG" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CONTENT_ITEM_REL">
+    <Key>
+      <PropertyRef Name="CONTENT_ITEM_REL_UID" />
+    </Key>
+    <Property Name="CONTENT_ITEM_REL_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="CONTENT_ITEM_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="RELATED_CONTENT_ITEM_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="START_DATE" Type="timestamp" />
+    <Property Name="END_DATE" Type="timestamp" />
+    <Property Name="POSITION_UCODE" Type="varchar" MaxLength="25" />
+    <Property Name="SITE_UID" Type="varchar" MaxLength="40" />
+    <Property Name="MEDIA_SIZE_TYPE_UCODE" Type="varchar" MaxLength="25" />
+    <Property Name="VERSION" Type="int" Nullable="false" />
+    <Property Name="ABSTRACT" Type="varchar" MaxLength="2000" />
+    <Property Name="PHOTO_CREDIT" Type="varchar" MaxLength="256" />
+    <Property Name="IS_DEFAULT_THUMBNAIL" Type="int" />
+    <Property Name="SHOW_IN_VIEWER" Type="int" Nullable="false" />
+    <Property Name="ORDER" Type="int" />
+  </EntityType>
+  <EntityType Name="CONTENT_SECTION">
+    <Key>
+      <PropertyRef Name="CONTENT_SECTION_UID" />
+    </Key>
+    <Property Name="CONTENT_SECTION_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="SECTION_ITEM_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="CONTENT_ITEM_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="START_DATE" Type="timestamp" />
+    <Property Name="END_DATE" Type="timestamp" />
+    <Property Name="TITLE" Type="varchar" MaxLength="255" />
+    <Property Name="ABSTRACT" Type="clob" MaxLength="1048576" />
+    <Property Name="LINK_TEXT" Type="varchar" MaxLength="255" />
+    <Property Name="AD_POSITION" Type="int" />
+    <Property Name="DISPLAY_SECTION_FLAG" Type="decimal" Nullable="false" Precision="1" />
+    <Property Name="VERSION" Type="int" Nullable="false" />
+    <Property Name="SITE_UID" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="FREEFORM">
+    <Key>
+      <PropertyRef Name="CONTENT_ITEM_UID" />
+    </Key>
+    <Property Name="CONTENT_ITEM_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="FREEFORM_HTML" Type="clob" Nullable="false" MaxLength="1048576" />
+  </EntityType>
+  <EntityType Name="IMAGE">
+    <Key>
+      <PropertyRef Name="CONTENT_ITEM_UID" />
+    </Key>
+    <Property Name="CONTENT_ITEM_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="FILE_SIZE" Type="int" />
+    <Property Name="HEIGHT" Type="int" />
+    <Property Name="WIDTH" Type="int" />
+    <Property Name="ALT" Type="varchar" MaxLength="255" />
+    <Property Name="CAPTION" Type="varchar" MaxLength="2000" />
+    <Property Name="IMAGE_URL" Type="varchar" MaxLength="255" />
+    <Property Name="FORMAT_TYPE_UCODE" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="MEDIA_SIZE_TYPE_UCODE" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="PHOTO_CREDIT" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="SECTION_ITEM">
+    <Key>
+      <PropertyRef Name="SECTION_ITEM_UID" />
+    </Key>
+    <Property Name="SECTION_ITEM_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="SECTION_CODE" Type="varchar" MaxLength="25" />
+    <Property Name="SITE_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="VIEWABLE_TYPE_UCODE" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="DEFAULT_ARTICLE_PAGE_UID" Type="varchar" MaxLength="40" />
+    <Property Name="STATE_UCODE" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="STATE_SET_DATE" Type="timestamp" Nullable="false" />
+    <Property Name="SECTION_NAME" Type="varchar" MaxLength="100" />
+    <Property Name="PARENT_SECTION_UID" Type="varchar" MaxLength="40" />
+    <Property Name="START_DATE" Type="timestamp" />
+    <Property Name="END_DATE" Type="timestamp" />
+    <Property Name="VERSION" Type="int" Nullable="false" />
+    <Property Name="VANITY_URL" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="NAVIGABLE_FLAG" Type="decimal" Nullable="false" Precision="1" />
+    <Property Name="HOME_SECTION_FLAG" Type="decimal" Nullable="false" Precision="1" />
+    <Property Name="CREATE_DATE" Type="timestamp" Nullable="false" />
+    <Property Name="CREATE_PERSON_UID" Type="varchar" MaxLength="40" />
+    <Property Name="UPDATE_DATE" Type="timestamp" Nullable="false" />
+    <Property Name="UPDATE_PERSON_UID" Type="varchar" MaxLength="40" />
+    <Property Name="CONTENT_GROUP_UID" Type="varchar" MaxLength="40" />
+    <Property Name="SECTION_AD_PATH_UID" Type="varchar" MaxLength="40" />
+    <Property Name="ARTICLE_AD_PATH_UID" Type="varchar" MaxLength="40" />
+    <Property Name="DEPLOYED_FLAG" Type="decimal" Nullable="false" Precision="1" />
+    <Property Name="KEYWORD" Type="varchar" MaxLength="2000" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="2500" />
+    <Property Name="BOOST" Type="int" Nullable="false" />
+    <Property Name="SCRIPT_WELL" Type="varchar" MaxLength="2000" />
+    <Property Name="INCLUDE_IN_SEARCH" Type="int" />
+    <Property Name="YAHOO_AD_TYPE" Type="varchar" MaxLength="25" />
+    <Property Name="YAHOO_CONTENT_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="YAHOO_TAXONOMY_UID" Type="varchar" MaxLength="40" />
+    <Property Name="CUSTOM_CONTENT_CATEGORIES" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="SITE_URL">
+    <Key>
+      <PropertyRef Name="SITE_URL_UID" />
+    </Key>
+    <Property Name="SITE_URL_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="URL" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="SITE_NAME" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="SITE_URL_TYPE_UCODE" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="SITE_UID" Type="varchar" Nullable="false" MaxLength="40" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'LIVEE_11.NGPS.PDF_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="PDF_VIEW">
+    <Key>
+      <PropertyRef Name="CONTENT_ITEM_UID" />
+      <PropertyRef Name="BINARY_URL" />
+      <PropertyRef Name="FORMAT_TYPE_UCODE" />
+    </Key>
+    <Property Name="CONTENT_ITEM_UID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="BINARY_URL" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="BINARY_FILENAME" Type="varchar" MaxLength="255" />
+    <Property Name="FILE_SIZE" Type="int" />
+    <Property Name="FORMAT_TYPE_UCODE" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="CAPTION" Type="varchar" MaxLength="2000" />
+    <Property Name="ALT" Type="varchar" MaxLength="255" />
+    <Property Name="CREDIT" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="SQL050428131840680">
+    <End Role="CONTENT_GROUP_TYPE" Type="livee_11Model.Store.CONTENT_GROUP_TYPE" Multiplicity="1" />
+    <End Role="CONTENT_GROUP" Type="livee_11Model.Store.CONTENT_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONTENT_GROUP_TYPE">
+        <PropertyRef Name="CONTENT_GROUP_TYPE_UCODE" />
+      </Principal>
+      <Dependent Role="CONTENT_GROUP">
+        <PropertyRef Name="CONTENT_GROUP_TYPE_UCODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SQL060228122718030">
+    <End Role="CONTENT_ITEM" Type="livee_11Model.Store.CONTENT_ITEM" Multiplicity="1" />
+    <End Role="ARTICLE" Type="livee_11Model.Store.ARTICLE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CONTENT_ITEM">
+        <PropertyRef Name="CONTENT_ITEM_UID" />
+      </Principal>
+      <Dependent Role="ARTICLE">
+        <PropertyRef Name="CONTENT_ITEM_UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SQL060228122829530">
+    <End Role="CONTENT_ITEM" Type="livee_11Model.Store.CONTENT_ITEM" Multiplicity="0..1" />
+    <End Role="CONTENT_ITEM1" Type="livee_11Model.Store.CONTENT_ITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONTENT_ITEM">
+        <PropertyRef Name="CONTENT_ITEM_UID" />
+      </Principal>
+      <Dependent Role="CONTENT_ITEM1">
+        <PropertyRef Name="ORIG_CONTENT_ITEM_UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SQL060228122936340">
+    <End Role="CONTENT_ITEM" Type="livee_11Model.Store.CONTENT_ITEM" Multiplicity="1" />
+    <End Role="CONTENT_ITEM_CONTENT_GROUP" Type="livee_11Model.Store.CONTENT_ITEM_CONTENT_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONTENT_ITEM">
+        <PropertyRef Name="CONTENT_ITEM_UID" />
+      </Principal>
+      <Dependent Role="CONTENT_ITEM_CONTENT_GROUP">
+        <PropertyRef Name="CONTENT_ITEM_UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SQL060228123011540">
+    <End Role="CONTENT_ITEM" Type="livee_11Model.Store.CONTENT_ITEM" Multiplicity="1" />
+    <End Role="CONTENT_ITEM_REL" Type="livee_11Model.Store.CONTENT_ITEM_REL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONTENT_ITEM">
+        <PropertyRef Name="CONTENT_ITEM_UID" />
+      </Principal>
+      <Dependent Role="CONTENT_ITEM_REL">
+        <PropertyRef Name="CONTENT_ITEM_UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SQL060228123016140">
+    <End Role="CONTENT_ITEM" Type="livee_11Model.Store.CONTENT_ITEM" Multiplicity="1" />
+    <End Role="CONTENT_ITEM_REL" Type="livee_11Model.Store.CONTENT_ITEM_REL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONTENT_ITEM">
+        <PropertyRef Name="CONTENT_ITEM_UID" />
+      </Principal>
+      <Dependent Role="CONTENT_ITEM_REL">
+        <PropertyRef Name="RELATED_CONTENT_ITEM_UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SQL060228123058700">
+    <End Role="CONTENT_SECTION" Type="livee_11Model.Store.CONTENT_SECTION" Multiplicity="1" />
+    <End Role="CONTENT_SECTION1" Type="livee_11Model.Store.CONTENT_SECTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONTENT_SECTION">
+        <PropertyRef Name="CONTENT_SECTION_UID" />
+      </Principal>
+      <Dependent Role="CONTENT_SECTION1">
+        <PropertyRef Name="CONTENT_ITEM_UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SQL060228123348090">
+    <End Role="CONTENT_ITEM" Type="livee_11Model.Store.CONTENT_ITEM" Multiplicity="1" />
+    <End Role="FREEFORM" Type="livee_11Model.Store.FREEFORM" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CONTENT_ITEM">
+        <PropertyRef Name="CONTENT_ITEM_UID" />
+      </Principal>
+      <Dependent Role="FREEFORM">
+        <PropertyRef Name="CONTENT_ITEM_UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SQL060228123408420">
+    <End Role="CONTENT_ITEM" Type="livee_11Model.Store.CONTENT_ITEM" Multiplicity="1" />
+    <End Role="IMAGE" Type="livee_11Model.Store.IMAGE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CONTENT_ITEM">
+        <PropertyRef Name="CONTENT_ITEM_UID" />
+      </Principal>
+      <Dependent Role="IMAGE">
+        <PropertyRef Name="CONTENT_ITEM_UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SQL060404143643350">
+    <End Role="SECTION_ITEM" Type="livee_11Model.Store.SECTION_ITEM" Multiplicity="1" />
+    <End Role="CONTENT_SECTION" Type="livee_11Model.Store.CONTENT_SECTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SECTION_ITEM">
+        <PropertyRef Name="SECTION_ITEM_UID" />
+      </Principal>
+      <Dependent Role="CONTENT_SECTION">
+        <PropertyRef Name="SECTION_ITEM_UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SQL060404143754520">
+    <End Role="SECTION_ITEM" Type="livee_11Model.Store.SECTION_ITEM" Multiplicity="0..1" />
+    <End Role="SECTION_ITEM1" Type="livee_11Model.Store.SECTION_ITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SECTION_ITEM">
+        <PropertyRef Name="SECTION_ITEM_UID" />
+      </Principal>
+      <Dependent Role="SECTION_ITEM1">
+        <PropertyRef Name="PARENT_SECTION_UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SQL060404164054980">
+    <End Role="CONTENT_GROUP" Type="livee_11Model.Store.CONTENT_GROUP" Multiplicity="0..1" />
+    <End Role="CONTENT_GROUP1" Type="livee_11Model.Store.CONTENT_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONTENT_GROUP">
+        <PropertyRef Name="CONTENT_GROUP_UID" />
+      </Principal>
+      <Dependent Role="CONTENT_GROUP1">
+        <PropertyRef Name="PARENT_CONTENT_GROUP_UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SQL060404164112120">
+    <End Role="CONTENT_GROUP" Type="livee_11Model.Store.CONTENT_GROUP" Multiplicity="1" />
+    <End Role="CONTENT_ITEM_CONTENT_GROUP" Type="livee_11Model.Store.CONTENT_ITEM_CONTENT_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONTENT_GROUP">
+        <PropertyRef Name="CONTENT_GROUP_UID" />
+      </Principal>
+      <Dependent Role="CONTENT_ITEM_CONTENT_GROUP">
+        <PropertyRef Name="CONTENT_GROUP_UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SQL060404164248270">
+    <End Role="CONTENT_GROUP" Type="livee_11Model.Store.CONTENT_GROUP" Multiplicity="0..1" />
+    <End Role="SECTION_ITEM" Type="livee_11Model.Store.SECTION_ITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONTENT_GROUP">
+        <PropertyRef Name="CONTENT_GROUP_UID" />
+      </Principal>
+      <Dependent Role="SECTION_ITEM">
+        <PropertyRef Name="CONTENT_GROUP_UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

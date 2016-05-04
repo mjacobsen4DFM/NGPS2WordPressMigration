@@ -1,0 +1,27 @@
+C:\apps\ArticleDataServiceMigration\DataModels\bin\Debug\DataModels.dll.config
+C:\apps\ArticleDataServiceMigration\DataModels\bin\Debug\DataModels.dll
+C:\apps\ArticleDataServiceMigration\DataModels\bin\Debug\DataModels.pdb
+C:\apps\ArticleDataServiceMigration\DataModels\obj\Debug\DataModels.dll
+C:\apps\ArticleDataServiceMigration\DataModels\obj\Debug\DataModels.pdb
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\bin\Debug\DataModels.dll.config
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\bin\Debug\DataModels.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\bin\Debug\DataModels.pdb
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\obj\Debug\DataModels.dll
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\obj\Debug\DataModels.pdb
+C:\Users\Michael\Documents\Cloud\Google Drive\Work\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\obj\Debug\DataModels.csprojResolveAssemblyReference.cache
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\bin\Debug\DataModels.dll.config
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\bin\Debug\DataModels.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\bin\Debug\DataModels.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\bin\Debug\IBM.Data.DB2.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\bin\Debug\IBM.Data.DB2.Entity.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\obj\Debug\DataModels.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\obj\Debug\DataModels.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Projects\ADSM\apps\ArticleDataServiceMigration\DataModels\obj\Debug\DataModels.csprojResolveAssemblyReference.cache
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataModels\bin\Debug\DataModels.dll.config
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataModels\bin\Debug\DataModels.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataModels\bin\Debug\DataModels.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataModels\bin\Debug\IBM.Data.DB2.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataModels\bin\Debug\IBM.Data.DB2.Entity.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataModels\obj\Debug\DataModels.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataModels\obj\Debug\DataModels.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataModels\obj\Debug\DataModels.csprojResolveAssemblyReference.cache

@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ArticleDataDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ArticleDataDbModelStoreContainer">
+    <EntitySet Name="article" EntityType="ArticleDataDbModel.Store.article" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="article_lock" EntityType="ArticleDataDbModel.Store.article_lock" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="articleEditOrg" EntityType="ArticleDataDbModel.Store.articleEditOrg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="asset" EntityType="ArticleDataDbModel.Store.asset" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Exception" EntityType="ArticleDataDbModel.Store.Exception" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="htmlHoldRules" EntityType="ArticleDataDbModel.Store.htmlHoldRules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Image" EntityType="ArticleDataDbModel.Store.Image" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="image_tracker" EntityType="ArticleDataDbModel.Store.image_tracker" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="logstatements" EntityType="ArticleDataDbModel.Store.logstatements" store:Type="Tables" store:Schema="dbo" store:Name="logstatements">
+      <DefiningQuery>SELECT 
+      [logstatements].[article_uid] AS [article_uid], 
+      [logstatements].[statement] AS [statement], 
+      [logstatements].[ts] AS [ts]
+      FROM [dbo].[logstatements] AS [logstatements]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MigrationError" EntityType="ArticleDataDbModel.Store.MigrationError" store:Type="Tables" store:Schema="dbo" store:Name="MigrationError">
+      <DefiningQuery>SELECT 
+      [MigrationError].[article_uid] AS [article_uid], 
+      [MigrationError].[errortype] AS [errortype], 
+      [MigrationError].[myMessage] AS [myMessage], 
+      [MigrationError].[ts] AS [ts]
+      FROM [dbo].[MigrationError] AS [MigrationError]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="profile" EntityType="ArticleDataDbModel.Store.profile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="saxo_article" EntityType="ArticleDataDbModel.Store.saxo_article" store:Type="Tables" store:Schema="dbo" store:Name="saxo_article">
+      <DefiningQuery>SELECT 
+      [saxo_article].[article_uid] AS [article_uid], 
+      [saxo_article].[siteid] AS [siteid], 
+      [saxo_article].[destination_siteid] AS [destination_siteid], 
+      [saxo_article].[xmldata] AS [xmldata], 
+      [saxo_article].[viewuri] AS [viewuri], 
+      [saxo_article].[storyurl] AS [storyurl]
+      FROM [dbo].[saxo_article] AS [saxo_article]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="saxo_gallery" EntityType="ArticleDataDbModel.Store.saxo_gallery" store:Type="Tables" store:Schema="dbo" store:Name="saxo_gallery">
+      <DefiningQuery>SELECT 
+      [saxo_gallery].[destination_siteid] AS [destination_siteid], 
+      [saxo_gallery].[article_uid] AS [article_uid], 
+      [saxo_gallery].[gallery_uid] AS [gallery_uid], 
+      [saxo_gallery].[similarity] AS [similarity], 
+      [saxo_gallery].[edit] AS [edit]
+      FROM [dbo].[saxo_gallery] AS [saxo_gallery]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="saxo_image" EntityType="ArticleDataDbModel.Store.saxo_image" store:Type="Tables" store:Schema="dbo" store:Name="saxo_image">
+      <DefiningQuery>SELECT 
+      [saxo_image].[asset_uid] AS [asset_uid], 
+      [saxo_image].[url] AS [url], 
+      [saxo_image].[destination_siteid] AS [destination_siteid]
+      FROM [dbo].[saxo_image] AS [saxo_image]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="saxo_pubMap" EntityType="ArticleDataDbModel.Store.saxo_pubMap" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sectionAnchorMap" EntityType="ArticleDataDbModel.Store.sectionAnchorMap" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SessionError" EntityType="ArticleDataDbModel.Store.SessionError" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tracksession" EntityType="ArticleDataDbModel.Store.tracksession" store:Type="Tables" store:Schema="dbo" store:Name="tracksession">
+      <DefiningQuery>SELECT 
+      [tracksession].[sid] AS [sid], 
+      [tracksession].[xmldocument] AS [xmldocument], 
+      [tracksession].[ts] AS [ts]
+      FROM [dbo].[tracksession] AS [tracksession]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Exception_SessionError" Association="ArticleDataDbModel.Store.FK_Exception_SessionError">
+      <End Role="SessionError" EntitySet="SessionError" />
+      <End Role="Exception" EntitySet="Exception" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="article">
+    <Key>
+      <PropertyRef Name="article_uid" />
+    </Key>
+    <Property Name="siteid" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="category" Type="varchar" MaxLength="50" />
+    <Property Name="anchor" Type="varchar" MaxLength="50" />
+    <Property Name="startdate" Type="datetime" Nullable="false" />
+    <Property Name="enddate" Type="datetime" />
+    <Property Name="heading" Type="varchar(max)" />
+    <Property Name="body" Type="varchar(max)" />
+    <Property Name="relatedArticles" Type="varchar(max)" />
+    <Property Name="summary" Type="varchar(max)" />
+    <Property Name="byline" Type="varchar(max)" />
+    <Property Name="subtitle" Type="varchar(max)" />
+    <Property Name="seodescription" Type="varchar(max)" />
+    <Property Name="keyword" Type="varchar(max)" />
+    <Property Name="imagecount" Type="int" />
+    <Property Name="origsite" Type="varchar(max)" />
+    <Property Name="displaygroup" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="article_lock">
+    <Key>
+      <PropertyRef Name="article_uid" />
+    </Key>
+    <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="locked" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="articleEditOrg">
+    <Key>
+      <PropertyRef Name="article_uid" />
+    </Key>
+    <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="heading" Type="varchar(max)" />
+    <Property Name="summary" Type="varchar(max)" />
+    <Property Name="byline" Type="varchar(max)" />
+    <Property Name="body" Type="varchar(max)" />
+    <Property Name="ts" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="asset">
+    <Key>
+      <PropertyRef Name="article_uid" />
+      <PropertyRef Name="asset_uid" />
+    </Key>
+    <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="asset_uid" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="asset_type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Exception">
+    <Key>
+      <PropertyRef Name="ExceptionID" />
+    </Key>
+    <Property Name="ExceptionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ExceptionLevel" Type="int" Nullable="false" />
+    <Property Name="SessionErrorID" Type="int" Nullable="false" />
+    <Property Name="Source" Type="varchar" MaxLength="200" />
+    <Property Name="StackTrace" Type="varchar" MaxLength="4000" />
+    <Property Name="Message" Type="varchar" MaxLength="1000" />
+    <Property Name="Machine" Type="varchar" MaxLength="50" />
+    <Property Name="TargetSite" Type="varchar" MaxLength="100" />
+    <Property Name="ts" Type="datetime" />
+  </EntityType>
+  <EntityType Name="htmlHoldRules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="htmltag" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="asset_uid" />
+    </Key>
+    <Property Name="asset_uid" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="imagepath" Type="varchar" MaxLength="255" />
+    <Property Name="position" Type="varchar" MaxLength="50" />
+    <Property Name="width" Type="int" />
+    <Property Name="height" Type="int" />
+    <Property Name="media_type" Type="varchar" MaxLength="50" />
+    <Property Name="caption" Type="varchar(max)" />
+    <Property Name="filesize" Type="int" />
+  </EntityType>
+  <EntityType Name="image_tracker">
+    <Key>
+      <PropertyRef Name="article_uid" />
+      <PropertyRef Name="asset_uid" />
+    </Key>
+    <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="asset_uid" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="siteid" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="soft_delete" Type="varchar" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ArticleDataDb.dbo.logstatements' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="logstatements">
+    <Key>
+      <PropertyRef Name="article_uid" />
+      <PropertyRef Name="statement" />
+      <PropertyRef Name="ts" />
+    </Key>
+    <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="statement" Type="varchar(max)" Nullable="false" />
+    <Property Name="ts" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ArticleDataDb.dbo.MigrationError' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MigrationError">
+    <Key>
+      <PropertyRef Name="article_uid" />
+    </Key>
+    <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="errortype" Type="int" />
+    <Property Name="myMessage" Type="varchar(max)" />
+    <Property Name="ts" Type="datetime" />
+  </EntityType>
+  <EntityType Name="profile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="uri" Type="varchar(max)" Nullable="false" />
+    <Property Name="childcount" Type="int" Nullable="false" />
+    <Property Name="childrenuri" Type="varchar(max)" />
+    <Property Name="fieldname" Type="varchar(max)" Nullable="false" />
+    <Property Name="treelevel" Type="int" Nullable="false" />
+    <Property Name="parentid" Type="int" Nullable="false" />
+    <Property Name="rootid" Type="int" Nullable="false" />
+    <Property Name="realid" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ArticleDataDb.dbo.saxo_article' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="saxo_article">
+    <Key>
+      <PropertyRef Name="article_uid" />
+      <PropertyRef Name="siteid" />
+      <PropertyRef Name="xmldata" />
+    </Key>
+    <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="siteid" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="destination_siteid" Type="varchar" MaxLength="5" />
+    <Property Name="xmldata" Type="varchar(max)" Nullable="false" />
+    <Property Name="viewuri" Type="varchar(max)" />
+    <Property Name="storyurl" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ArticleDataDb.dbo.saxo_gallery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="saxo_gallery">
+    <Key>
+      <PropertyRef Name="article_uid" />
+      <PropertyRef Name="gallery_uid" />
+    </Key>
+    <Property Name="destination_siteid" Type="varchar" MaxLength="5" />
+    <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="gallery_uid" Type="varchar(max)" Nullable="false" />
+    <Property Name="similarity" Type="float" />
+    <Property Name="edit" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ArticleDataDb.dbo.saxo_image' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="saxo_image">
+    <Key>
+      <PropertyRef Name="asset_uid" />
+      <PropertyRef Name="url" />
+    </Key>
+    <Property Name="asset_uid" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="url" Type="varchar(max)" Nullable="false" />
+    <Property Name="destination_siteid" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="saxo_pubMap">
+    <Key>
+      <PropertyRef Name="siteid" />
+    </Key>
+    <Property Name="siteid" Type="int" Nullable="false" />
+    <Property Name="pubname" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="saxoname" Type="varchar" MaxLength="100" />
+    <Property Name="destination_siteid" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="OWStarget" Type="varchar" MaxLength="255" />
+    <Property Name="OWSViewSearch" Type="varchar" MaxLength="255" />
+    <Property Name="OWSViewReplace" Type="varchar" MaxLength="255" />
+    <Property Name="taxonomyPubId" Type="int" />
+    <Property Name="sectionmapcomplete" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="sectionAnchorMap">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="siteid" Type="int" Nullable="false" />
+    <Property Name="sectionAnchor" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="sectionName" Type="varchar" MaxLength="128" />
+    <Property Name="ProfileId" Type="int" Nullable="false" />
+    <Property Name="ProfileId2" Type="int" />
+  </EntityType>
+  <EntityType Name="SessionError">
+    <Key>
+      <PropertyRef Name="SessionErrorID" />
+    </Key>
+    <Property Name="SessionErrorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="RequestMethod" Type="varchar" MaxLength="5" />
+    <Property Name="ServerPort" Type="int" />
+    <Property Name="HTTPS" Type="varchar" MaxLength="3" />
+    <Property Name="LocalAddr" Type="varchar" MaxLength="15" />
+    <Property Name="HostAddress" Type="varchar" MaxLength="15" />
+    <Property Name="UserAgent" Type="varchar" MaxLength="255" />
+    <Property Name="URL" Type="varchar" MaxLength="400" />
+    <Property Name="CustomerRefID" Type="varchar" MaxLength="20" />
+    <Property Name="FormData" Type="varchar" MaxLength="2000" />
+    <Property Name="AllHTTP" Type="varchar" MaxLength="2000" />
+    <Property Name="InsertDate" Type="datetime" Nullable="false" />
+    <Property Name="IsCookieLess" Type="bit" />
+    <Property Name="IsNewSession" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ArticleDataDb.dbo.tracksession' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="tracksession">
+    <Key>
+      <PropertyRef Name="sid" />
+      <PropertyRef Name="xmldocument" />
+      <PropertyRef Name="ts" />
+    </Key>
+    <Property Name="sid" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="xmldocument" Type="xml" Nullable="false" />
+    <Property Name="ts" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Exception_SessionError">
+    <End Role="SessionError" Type="ArticleDataDbModel.Store.SessionError" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Exception" Type="ArticleDataDbModel.Store.Exception" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SessionError">
+        <PropertyRef Name="SessionErrorID" />
+      </Principal>
+      <Dependent Role="Exception">
+        <PropertyRef Name="SessionErrorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

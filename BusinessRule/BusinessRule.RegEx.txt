@@ -1,0 +1,54 @@
+\w{2,3}\s(([\w\-]+)(\s[\w\.]*(and)*)\s([\w\-]+))
+
+
+
+
+contains "by " and "<" or ","
+.*(BY|By)\s*([\w\s\-\.\']+)(\<|,) = $2
+
+Contains BY, By, by
+(BY|By|by)\s*([\w\s\-\.\']+) =$2
+By Rachel E. Stassen-Berger<br>rstassenberger@pioneerpress.com
+By Mary Ann Grossmann<br>mgrossmann@pioneerpress.com
+By Karen DeYoung and Nick Miroff<br>Washington Post
+'Cadillac' By Chris Hewitt <br>chewitt@pioneerpress.com
+ BY AMY CARLSON GUSTAFSON <b>Pioneer Press
+'Doubt' Thought-provoking take on a modern parable By Dominic P. Papatola <br>Special to the Pioneer Press
+/ BY KEVIN HARTER <br>Things should be down right balmy - relatively - by the time the 19th Annual Hudson H Hudson, Wis. Pioneer Press
+<a href="mailto:bsalisbury@pioneerpress.com"><h3>By Bill Salisbury <br>bsalisbury@pioneerpress.com</a></h3> 
+A Burnsville police officer wa Twin Cities / BY TAD VEZNER Pioneer Press <br>
+A SILENT AUCTION OF POSTERS DESIGNED BY TWIN CITIES GRAPHIC ARTISTS WILL GIVE WELL-WISHERS A CHANCE TO HELP THE VICTIMS OF THE I-35W BRIDGE COLLAPSE. BY DEBRA O'CONNOR <br>Pioneer Press
+<b>BY BETH GAUPER </b><br>Pioneer Press
+<b> By Cheryl, 61</b>
+Special to Pioneer Press<br>by Laura H. Gilbert 
+
+
+No "by", contains "<" or ","
+([\w\s\-\.\']+)(\<|,) = $1
+Ben Garvin <br>Pioneer Press
+-- Emily Gurnon<br>
+Allison Kaplan, Pioneer Press
+Alan Solomon, Special to the Pioneer Press\']+)\<
+<a href="mailto:jojeda@pioneerpress.com">JULIO OJEDA-ZAPATA</a> <br> Pioneer Press
+ <p>Amy Carlson Gustafson<br>Pioneer Press
+
+
+
+Nested in ><
+\>([\w\s\-\.\']+)(\<|,) = $1
+
+
+([\w\s\-\.\']+)(and|AND)([\w\s\-\.\']+)
+ALEX FRIEDRICH AND DAVE ORRICK
+
+([\w\-]+)(\s\w{1}\.)*\s([\w\-]+) = $1 $3
+Rachel E. Stassen-Berger
+
+
+Anomoly
+Special to Pioneer Press<br>Gaye Lindfors
+
+multi-match?
+<B> </B>CHRIS HEWITT <br>
+
+

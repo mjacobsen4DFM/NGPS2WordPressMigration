@@ -1,0 +1,6 @@
+c:\apps\ArticleDataServiceMigration\db2Common\bin\Release\db2Common.dll
+c:\apps\ArticleDataServiceMigration\db2Common\bin\Release\db2Common.pdb
+c:\apps\ArticleDataServiceMigration\db2Common\obj\Release\ResolveAssemblyReference.cache
+c:\apps\ArticleDataServiceMigration\db2Common\obj\Release\db2Common.dll
+c:\apps\ArticleDataServiceMigration\db2Common\obj\Release\db2Common.pdb
+C:\apps\ArticleDataServiceMigration\db2Common\bin\Release\IBM.Data.DB2.dll

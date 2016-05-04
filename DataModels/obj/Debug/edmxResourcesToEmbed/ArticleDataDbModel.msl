@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ArticleDataDbModelStoreContainer" CdmEntityContainer="ArticleDataDbEntities">
+    <EntitySetMapping Name="articles">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.article">
+        <MappingFragment StoreEntitySet="article">
+          <ScalarProperty Name="displaygroup" ColumnName="displaygroup" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="anchor" ColumnName="anchor" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="heading" ColumnName="heading" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="relatedArticles" ColumnName="relatedArticles" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+          <ScalarProperty Name="byline" ColumnName="byline" />
+          <ScalarProperty Name="subtitle" ColumnName="subtitle" />
+          <ScalarProperty Name="seodescription" ColumnName="seodescription" />
+          <ScalarProperty Name="keyword" ColumnName="keyword" />
+          <ScalarProperty Name="imagecount" ColumnName="imagecount" />
+          <ScalarProperty Name="origsite" ColumnName="origsite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="article_lock">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.article_lock">
+        <MappingFragment StoreEntitySet="article_lock">
+          <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+          <ScalarProperty Name="locked" ColumnName="locked" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="articleEditOrgs">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.articleEditOrg">
+        <MappingFragment StoreEntitySet="articleEditOrg">
+          <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+          <ScalarProperty Name="heading" ColumnName="heading" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+          <ScalarProperty Name="byline" ColumnName="byline" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="assets">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.asset">
+        <MappingFragment StoreEntitySet="asset">
+          <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+          <ScalarProperty Name="asset_uid" ColumnName="asset_uid" />
+          <ScalarProperty Name="asset_type" ColumnName="asset_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exceptions">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.Exception">
+        <MappingFragment StoreEntitySet="Exception">
+          <ScalarProperty Name="ExceptionID" ColumnName="ExceptionID" />
+          <ScalarProperty Name="ExceptionLevel" ColumnName="ExceptionLevel" />
+          <ScalarProperty Name="SessionErrorID" ColumnName="SessionErrorID" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Machine" ColumnName="Machine" />
+          <ScalarProperty Name="TargetSite" ColumnName="TargetSite" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="htmlHoldRules">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.htmlHoldRule">
+        <MappingFragment StoreEntitySet="htmlHoldRules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="htmltag" ColumnName="htmltag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.Image">
+        <MappingFragment StoreEntitySet="Image">
+          <ScalarProperty Name="asset_uid" ColumnName="asset_uid" />
+          <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="media_type" ColumnName="media_type" />
+          <ScalarProperty Name="caption" ColumnName="caption" />
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="image_tracker">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.image_tracker">
+        <MappingFragment StoreEntitySet="image_tracker">
+          <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+          <ScalarProperty Name="asset_uid" ColumnName="asset_uid" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="soft_delete" ColumnName="soft_delete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logstatements">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.logstatement">
+        <MappingFragment StoreEntitySet="logstatements">
+          <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+          <ScalarProperty Name="statement" ColumnName="statement" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MigrationErrors">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.MigrationError">
+        <MappingFragment StoreEntitySet="MigrationError">
+          <ScalarProperty Name="errortype" ColumnName="errortype" />
+          <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+          <ScalarProperty Name="myMessage" ColumnName="myMessage" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="profiles">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.profile">
+        <MappingFragment StoreEntitySet="profile">
+          <ScalarProperty Name="realid" ColumnName="realid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uri" ColumnName="uri" />
+          <ScalarProperty Name="childcount" ColumnName="childcount" />
+          <ScalarProperty Name="childrenuri" ColumnName="childrenuri" />
+          <ScalarProperty Name="fieldname" ColumnName="fieldname" />
+          <ScalarProperty Name="treelevel" ColumnName="treelevel" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="rootid" ColumnName="rootid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="saxo_article">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.saxo_article">
+        <MappingFragment StoreEntitySet="saxo_article">
+          <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="destination_siteid" ColumnName="destination_siteid" />
+          <ScalarProperty Name="xmldata" ColumnName="xmldata" />
+          <ScalarProperty Name="viewuri" ColumnName="viewuri" />
+          <ScalarProperty Name="storyurl" ColumnName="storyurl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="saxo_gallery">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.saxo_gallery">
+        <MappingFragment StoreEntitySet="saxo_gallery">
+          <ScalarProperty Name="destination_siteid" ColumnName="destination_siteid" />
+          <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+          <ScalarProperty Name="gallery_uid" ColumnName="gallery_uid" />
+          <ScalarProperty Name="similarity" ColumnName="similarity" />
+          <ScalarProperty Name="edit" ColumnName="edit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="saxo_image">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.saxo_image">
+        <MappingFragment StoreEntitySet="saxo_image">
+          <ScalarProperty Name="asset_uid" ColumnName="asset_uid" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="destination_siteid" ColumnName="destination_siteid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="saxo_pubMap">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.saxo_pubMap">
+        <MappingFragment StoreEntitySet="saxo_pubMap">
+          <ScalarProperty Name="sectionmapcomplete" ColumnName="sectionmapcomplete" />
+          <ScalarProperty Name="taxonomyPubId" ColumnName="taxonomyPubId" />
+          <ScalarProperty Name="saxoname" ColumnName="saxoname" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="pubname" ColumnName="pubname" />
+          <ScalarProperty Name="destination_siteid" ColumnName="destination_siteid" />
+          <ScalarProperty Name="OWStarget" ColumnName="OWStarget" />
+          <ScalarProperty Name="OWSViewSearch" ColumnName="OWSViewSearch" />
+          <ScalarProperty Name="OWSViewReplace" ColumnName="OWSViewReplace" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sectionAnchorMaps">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.sectionAnchorMap">
+        <MappingFragment StoreEntitySet="sectionAnchorMap">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="siteid" ColumnName="siteid" />
+          <ScalarProperty Name="sectionAnchor" ColumnName="sectionAnchor" />
+          <ScalarProperty Name="sectionName" ColumnName="sectionName" />
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="ProfileId2" ColumnName="ProfileId2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SessionErrors">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.SessionError">
+        <MappingFragment StoreEntitySet="SessionError">
+          <ScalarProperty Name="SessionErrorID" ColumnName="SessionErrorID" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="RequestMethod" ColumnName="RequestMethod" />
+          <ScalarProperty Name="ServerPort" ColumnName="ServerPort" />
+          <ScalarProperty Name="HTTPS" ColumnName="HTTPS" />
+          <ScalarProperty Name="LocalAddr" ColumnName="LocalAddr" />
+          <ScalarProperty Name="HostAddress" ColumnName="HostAddress" />
+          <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="CustomerRefID" ColumnName="CustomerRefID" />
+          <ScalarProperty Name="FormData" ColumnName="FormData" />
+          <ScalarProperty Name="AllHTTP" ColumnName="AllHTTP" />
+          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+          <ScalarProperty Name="IsCookieLess" ColumnName="IsCookieLess" />
+          <ScalarProperty Name="IsNewSession" ColumnName="IsNewSession" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tracksessions">
+      <EntityTypeMapping TypeName="ArticleDataDbModel.tracksession">
+        <MappingFragment StoreEntitySet="tracksession">
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="xmldocument" ColumnName="xmldocument" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

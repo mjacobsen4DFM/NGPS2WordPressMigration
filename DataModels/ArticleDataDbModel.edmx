@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ArticleDataDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ArticleDataDbModelStoreContainer">
+          <EntitySet Name="article" EntityType="ArticleDataDbModel.Store.article" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="article_lock" EntityType="ArticleDataDbModel.Store.article_lock" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="articleEditOrg" EntityType="ArticleDataDbModel.Store.articleEditOrg" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="asset" EntityType="ArticleDataDbModel.Store.asset" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Exception" EntityType="ArticleDataDbModel.Store.Exception" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="htmlHoldRules" EntityType="ArticleDataDbModel.Store.htmlHoldRules" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Image" EntityType="ArticleDataDbModel.Store.Image" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="image_tracker" EntityType="ArticleDataDbModel.Store.image_tracker" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="logstatements" EntityType="ArticleDataDbModel.Store.logstatements" store:Type="Tables" store:Schema="dbo" store:Name="logstatements">
+            <DefiningQuery>SELECT 
+      [logstatements].[article_uid] AS [article_uid], 
+      [logstatements].[statement] AS [statement], 
+      [logstatements].[ts] AS [ts]
+      FROM [dbo].[logstatements] AS [logstatements]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MigrationError" EntityType="ArticleDataDbModel.Store.MigrationError" store:Type="Tables" store:Schema="dbo" store:Name="MigrationError">
+            <DefiningQuery>SELECT 
+      [MigrationError].[article_uid] AS [article_uid], 
+      [MigrationError].[errortype] AS [errortype], 
+      [MigrationError].[myMessage] AS [myMessage], 
+      [MigrationError].[ts] AS [ts]
+      FROM [dbo].[MigrationError] AS [MigrationError]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="profile" EntityType="ArticleDataDbModel.Store.profile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="saxo_article" EntityType="ArticleDataDbModel.Store.saxo_article" store:Type="Tables" store:Schema="dbo" store:Name="saxo_article">
+            <DefiningQuery>SELECT 
+      [saxo_article].[article_uid] AS [article_uid], 
+      [saxo_article].[siteid] AS [siteid], 
+      [saxo_article].[destination_siteid] AS [destination_siteid], 
+      [saxo_article].[xmldata] AS [xmldata], 
+      [saxo_article].[viewuri] AS [viewuri], 
+      [saxo_article].[storyurl] AS [storyurl]
+      FROM [dbo].[saxo_article] AS [saxo_article]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="saxo_gallery" EntityType="ArticleDataDbModel.Store.saxo_gallery" store:Type="Tables" store:Schema="dbo" store:Name="saxo_gallery">
+            <DefiningQuery>SELECT 
+      [saxo_gallery].[destination_siteid] AS [destination_siteid], 
+      [saxo_gallery].[article_uid] AS [article_uid], 
+      [saxo_gallery].[gallery_uid] AS [gallery_uid], 
+      [saxo_gallery].[similarity] AS [similarity], 
+      [saxo_gallery].[edit] AS [edit]
+      FROM [dbo].[saxo_gallery] AS [saxo_gallery]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="saxo_image" EntityType="ArticleDataDbModel.Store.saxo_image" store:Type="Tables" store:Schema="dbo" store:Name="saxo_image">
+            <DefiningQuery>SELECT 
+      [saxo_image].[asset_uid] AS [asset_uid], 
+      [saxo_image].[url] AS [url], 
+      [saxo_image].[destination_siteid] AS [destination_siteid]
+      FROM [dbo].[saxo_image] AS [saxo_image]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="saxo_pubMap" EntityType="ArticleDataDbModel.Store.saxo_pubMap" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sectionAnchorMap" EntityType="ArticleDataDbModel.Store.sectionAnchorMap" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SessionError" EntityType="ArticleDataDbModel.Store.SessionError" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tracksession" EntityType="ArticleDataDbModel.Store.tracksession" store:Type="Tables" store:Schema="dbo" store:Name="tracksession">
+            <DefiningQuery>SELECT 
+      [tracksession].[sid] AS [sid], 
+      [tracksession].[xmldocument] AS [xmldocument], 
+      [tracksession].[ts] AS [ts]
+      FROM [dbo].[tracksession] AS [tracksession]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Exception_SessionError" Association="ArticleDataDbModel.Store.FK_Exception_SessionError">
+            <End Role="SessionError" EntitySet="SessionError" />
+            <End Role="Exception" EntitySet="Exception" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="article">
+          <Key>
+            <PropertyRef Name="article_uid" />
+          </Key>
+          <Property Name="siteid" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="category" Type="varchar" MaxLength="50" />
+          <Property Name="anchor" Type="varchar" MaxLength="50" />
+          <Property Name="startdate" Type="datetime" Nullable="false" />
+          <Property Name="enddate" Type="datetime" />
+          <Property Name="heading" Type="varchar(max)" />
+          <Property Name="body" Type="varchar(max)" />
+          <Property Name="relatedArticles" Type="varchar(max)" />
+          <Property Name="summary" Type="varchar(max)" />
+          <Property Name="byline" Type="varchar(max)" />
+          <Property Name="subtitle" Type="varchar(max)" />
+          <Property Name="seodescription" Type="varchar(max)" />
+          <Property Name="keyword" Type="varchar(max)" />
+          <Property Name="imagecount" Type="int" />
+          <Property Name="origsite" Type="varchar(max)" />
+          <Property Name="displaygroup" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="article_lock">
+          <Key>
+            <PropertyRef Name="article_uid" />
+          </Key>
+          <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="locked" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="articleEditOrg">
+          <Key>
+            <PropertyRef Name="article_uid" />
+          </Key>
+          <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="heading" Type="varchar(max)" />
+          <Property Name="summary" Type="varchar(max)" />
+          <Property Name="byline" Type="varchar(max)" />
+          <Property Name="body" Type="varchar(max)" />
+          <Property Name="ts" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="asset">
+          <Key>
+            <PropertyRef Name="article_uid" />
+            <PropertyRef Name="asset_uid" />
+          </Key>
+          <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="asset_uid" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="asset_type" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Exception">
+          <Key>
+            <PropertyRef Name="ExceptionID" />
+          </Key>
+          <Property Name="ExceptionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ExceptionLevel" Type="int" Nullable="false" />
+          <Property Name="SessionErrorID" Type="int" Nullable="false" />
+          <Property Name="Source" Type="varchar" MaxLength="200" />
+          <Property Name="StackTrace" Type="varchar" MaxLength="4000" />
+          <Property Name="Message" Type="varchar" MaxLength="1000" />
+          <Property Name="Machine" Type="varchar" MaxLength="50" />
+          <Property Name="TargetSite" Type="varchar" MaxLength="100" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="htmlHoldRules">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="htmltag" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="asset_uid" />
+          </Key>
+          <Property Name="asset_uid" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="imagepath" Type="varchar" MaxLength="255" />
+          <Property Name="position" Type="varchar" MaxLength="50" />
+          <Property Name="width" Type="int" />
+          <Property Name="height" Type="int" />
+          <Property Name="media_type" Type="varchar" MaxLength="50" />
+          <Property Name="caption" Type="varchar(max)" />
+          <Property Name="filesize" Type="int" />
+        </EntityType>
+        <EntityType Name="image_tracker">
+          <Key>
+            <PropertyRef Name="article_uid" />
+            <PropertyRef Name="asset_uid" />
+          </Key>
+          <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="asset_uid" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="siteid" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="soft_delete" Type="varchar" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ArticleDataDb.dbo.logstatements' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="logstatements">
+          <Key>
+            <PropertyRef Name="article_uid" />
+            <PropertyRef Name="statement" />
+            <PropertyRef Name="ts" />
+          </Key>
+          <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="statement" Type="varchar(max)" Nullable="false" />
+          <Property Name="ts" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ArticleDataDb.dbo.MigrationError' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="MigrationError">
+          <Key>
+            <PropertyRef Name="article_uid" />
+          </Key>
+          <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="errortype" Type="int" />
+          <Property Name="myMessage" Type="varchar(max)" />
+          <Property Name="ts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="profile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="uri" Type="varchar(max)" Nullable="false" />
+          <Property Name="childcount" Type="int" Nullable="false" />
+          <Property Name="childrenuri" Type="varchar(max)" />
+          <Property Name="fieldname" Type="varchar(max)" Nullable="false" />
+          <Property Name="treelevel" Type="int" Nullable="false" />
+          <Property Name="parentid" Type="int" Nullable="false" />
+          <Property Name="rootid" Type="int" Nullable="false" />
+          <Property Name="realid" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ArticleDataDb.dbo.saxo_article' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="saxo_article">
+          <Key>
+            <PropertyRef Name="article_uid" />
+            <PropertyRef Name="siteid" />
+            <PropertyRef Name="xmldata" />
+          </Key>
+          <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="siteid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="destination_siteid" Type="varchar" MaxLength="5" />
+          <Property Name="xmldata" Type="varchar(max)" Nullable="false" />
+          <Property Name="viewuri" Type="varchar(max)" />
+          <Property Name="storyurl" Type="varchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ArticleDataDb.dbo.saxo_gallery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="saxo_gallery">
+          <Key>
+            <PropertyRef Name="article_uid" />
+            <PropertyRef Name="gallery_uid" />
+          </Key>
+          <Property Name="destination_siteid" Type="varchar" MaxLength="5" />
+          <Property Name="article_uid" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="gallery_uid" Type="varchar(max)" Nullable="false" />
+          <Property Name="similarity" Type="float" />
+          <Property Name="edit" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ArticleDataDb.dbo.saxo_image' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="saxo_image">
+          <Key>
+            <PropertyRef Name="asset_uid" />
+            <PropertyRef Name="url" />
+          </Key>
+          <Property Name="asset_uid" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="url" Type="varchar(max)" Nullable="false" />
+          <Property Name="destination_siteid" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="saxo_pubMap">
+          <Key>
+            <PropertyRef Name="siteid" />
+          </Key>
+          <Property Name="siteid" Type="int" Nullable="false" />
+          <Property Name="pubname" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="saxoname" Type="varchar" MaxLength="100" />
+          <Property Name="destination_siteid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="OWStarget" Type="varchar" MaxLength="255" />
+          <Property Name="OWSViewSearch" Type="varchar" MaxLength="255" />
+          <Property Name="OWSViewReplace" Type="varchar" MaxLength="255" />
+          <Property Name="taxonomyPubId" Type="int" />
+          <Property Name="sectionmapcomplete" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="sectionAnchorMap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="siteid" Type="int" Nullable="false" />
+          <Property Name="sectionAnchor" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="sectionName" Type="varchar" MaxLength="128" />
+          <Property Name="ProfileId" Type="int" Nullable="false" />
+          <Property Name="ProfileId2" Type="int" />
+        </EntityType>
+        <EntityType Name="SessionError">
+          <Key>
+            <PropertyRef Name="SessionErrorID" />
+          </Key>
+          <Property Name="SessionErrorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="RequestMethod" Type="varchar" MaxLength="5" />
+          <Property Name="ServerPort" Type="int" />
+          <Property Name="HTTPS" Type="varchar" MaxLength="3" />
+          <Property Name="LocalAddr" Type="varchar" MaxLength="15" />
+          <Property Name="HostAddress" Type="varchar" MaxLength="15" />
+          <Property Name="UserAgent" Type="varchar" MaxLength="255" />
+          <Property Name="URL" Type="varchar" MaxLength="400" />
+          <Property Name="CustomerRefID" Type="varchar" MaxLength="20" />
+          <Property Name="FormData" Type="varchar" MaxLength="2000" />
+          <Property Name="AllHTTP" Type="varchar" MaxLength="2000" />
+          <Property Name="InsertDate" Type="datetime" Nullable="false" />
+          <Property Name="IsCookieLess" Type="bit" />
+          <Property Name="IsNewSession" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ArticleDataDb.dbo.tracksession' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="tracksession">
+          <Key>
+            <PropertyRef Name="sid" />
+            <PropertyRef Name="xmldocument" />
+            <PropertyRef Name="ts" />
+          </Key>
+          <Property Name="sid" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="xmldocument" Type="xml" Nullable="false" />
+          <Property Name="ts" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Exception_SessionError">
+          <End Role="SessionError" Type="ArticleDataDbModel.Store.SessionError" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Exception" Type="ArticleDataDbModel.Store.Exception" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SessionError">
+              <PropertyRef Name="SessionErrorID" />
+            </Principal>
+            <Dependent Role="Exception">
+              <PropertyRef Name="SessionErrorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ArticleDataDbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ArticleDataDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="articles" EntityType="ArticleDataDbModel.article" />
+          <EntitySet Name="article_lock" EntityType="ArticleDataDbModel.article_lock" />
+          <EntitySet Name="articleEditOrgs" EntityType="ArticleDataDbModel.articleEditOrg" />
+          <EntitySet Name="assets" EntityType="ArticleDataDbModel.asset" />
+          <EntitySet Name="Exceptions" EntityType="ArticleDataDbModel.Exception" />
+          <EntitySet Name="htmlHoldRules" EntityType="ArticleDataDbModel.htmlHoldRule" />
+          <EntitySet Name="Images" EntityType="ArticleDataDbModel.Image" />
+          <EntitySet Name="image_tracker" EntityType="ArticleDataDbModel.image_tracker" />
+          <EntitySet Name="logstatements" EntityType="ArticleDataDbModel.logstatement" />
+          <EntitySet Name="MigrationErrors" EntityType="ArticleDataDbModel.MigrationError" />
+          <EntitySet Name="profiles" EntityType="ArticleDataDbModel.profile" />
+          <EntitySet Name="saxo_article" EntityType="ArticleDataDbModel.saxo_article" />
+          <EntitySet Name="saxo_gallery" EntityType="ArticleDataDbModel.saxo_gallery" />
+          <EntitySet Name="saxo_image" EntityType="ArticleDataDbModel.saxo_image" />
+          <EntitySet Name="saxo_pubMap" EntityType="ArticleDataDbModel.saxo_pubMap" />
+          <EntitySet Name="sectionAnchorMaps" EntityType="ArticleDataDbModel.sectionAnchorMap" />
+          <EntitySet Name="SessionErrors" EntityType="ArticleDataDbModel.SessionError" />
+          <EntitySet Name="tracksessions" EntityType="ArticleDataDbModel.tracksession" />
+          <AssociationSet Name="FK_Exception_SessionError" Association="ArticleDataDbModel.FK_Exception_SessionError">
+            <End Role="SessionError" EntitySet="SessionErrors" />
+            <End Role="Exception" EntitySet="Exceptions" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="article">
+          <Key>
+            <PropertyRef Name="article_uid" />
+          </Key>
+          <Property Name="siteid" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="category" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="anchor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="startdate" Type="DateTime" Nullable="false" />
+          <Property Name="enddate" Type="DateTime" />
+          <Property Name="heading" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="body" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="relatedArticles" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="summary" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="byline" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="subtitle" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="seodescription" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="keyword" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="imagecount" Type="Int32" />
+          <Property Name="origsite" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="displaygroup" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="article_lock">
+          <Key>
+            <PropertyRef Name="article_uid" />
+          </Key>
+          <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="locked" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="articleEditOrg">
+          <Key>
+            <PropertyRef Name="article_uid" />
+          </Key>
+          <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="heading" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="summary" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="byline" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="body" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ts" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="asset">
+          <Key>
+            <PropertyRef Name="article_uid" />
+            <PropertyRef Name="asset_uid" />
+          </Key>
+          <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="asset_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="asset_type" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Exception">
+          <Key>
+            <PropertyRef Name="ExceptionID" />
+          </Key>
+          <Property Name="ExceptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExceptionLevel" Type="Int32" Nullable="false" />
+          <Property Name="SessionErrorID" Type="Int32" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="StackTrace" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="Message" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Machine" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TargetSite" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ts" Type="DateTime" />
+          <NavigationProperty Name="SessionError" Relationship="ArticleDataDbModel.FK_Exception_SessionError" FromRole="Exception" ToRole="SessionError" />
+        </EntityType>
+        <EntityType Name="htmlHoldRule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="htmltag" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="asset_uid" />
+          </Key>
+          <Property Name="asset_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="imagepath" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="position" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="width" Type="Int32" />
+          <Property Name="height" Type="Int32" />
+          <Property Name="media_type" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="caption" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="filesize" Type="Int32" />
+        </EntityType>
+        <EntityType Name="image_tracker">
+          <Key>
+            <PropertyRef Name="article_uid" />
+            <PropertyRef Name="asset_uid" />
+          </Key>
+          <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="asset_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="siteid" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="soft_delete" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="logstatement">
+          <Key>
+            <PropertyRef Name="article_uid" />
+            <PropertyRef Name="statement" />
+            <PropertyRef Name="ts" />
+          </Key>
+          <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="statement" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ts" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MigrationError">
+          <Key>
+            <PropertyRef Name="article_uid" />
+          </Key>
+          <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="myMessage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ts" Type="DateTime" />
+          <Property Type="Int32" Name="errortype" />
+        </EntityType>
+        <EntityType Name="profile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="uri" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="childcount" Type="Int32" Nullable="false" />
+          <Property Name="childrenuri" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="fieldname" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="treelevel" Type="Int32" Nullable="false" />
+          <Property Name="parentid" Type="Int32" Nullable="false" />
+          <Property Name="rootid" Type="Int32" Nullable="false" />
+          <Property Type="Int32" Name="realid" />
+        </EntityType>
+        <EntityType Name="saxo_article">
+          <Key>
+            <PropertyRef Name="article_uid" />
+            <PropertyRef Name="siteid" />
+            <PropertyRef Name="xmldata" />
+          </Key>
+          <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="siteid" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="destination_siteid" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="xmldata" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="viewuri" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="storyurl" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="saxo_gallery">
+          <Key>
+            <PropertyRef Name="article_uid" />
+            <PropertyRef Name="gallery_uid" />
+          </Key>
+          <Property Name="destination_siteid" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="article_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="gallery_uid" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="similarity" Type="Double" />
+          <Property Name="edit" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="saxo_image">
+          <Key>
+            <PropertyRef Name="asset_uid" />
+            <PropertyRef Name="url" />
+          </Key>
+          <Property Name="asset_uid" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="url" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="destination_siteid" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="saxo_pubMap">
+          <Key>
+            <PropertyRef Name="siteid" />
+          </Key>
+          <Property Name="siteid" Type="Int32" Nullable="false" />
+          <Property Name="pubname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="destination_siteid" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OWStarget" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="OWSViewSearch" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="OWSViewReplace" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="saxoname" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="taxonomyPubId" />
+          <Property Type="String" Name="sectionmapcomplete" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sectionAnchorMap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="siteid" Type="Int32" Nullable="false" />
+          <Property Name="sectionAnchor" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="sectionName" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="ProfileId" Type="Int32" Nullable="false" />
+          <Property Name="ProfileId2" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SessionError">
+          <Key>
+            <PropertyRef Name="SessionErrorID" />
+          </Key>
+          <Property Name="SessionErrorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RequestMethod" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="ServerPort" Type="Int32" />
+          <Property Name="HTTPS" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="LocalAddr" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="HostAddress" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="UserAgent" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="URL" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+          <Property Name="CustomerRefID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FormData" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="AllHTTP" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="InsertDate" Type="DateTime" Nullable="false" />
+          <Property Name="IsCookieLess" Type="Boolean" />
+          <Property Name="IsNewSession" Type="Boolean" />
+          <NavigationProperty Name="Exceptions" Relationship="ArticleDataDbModel.FK_Exception_SessionError" FromRole="SessionError" ToRole="Exception" />
+        </EntityType>
+        <EntityType Name="tracksession">
+          <Key>
+            <PropertyRef Name="sid" />
+            <PropertyRef Name="xmldocument" />
+            <PropertyRef Name="ts" />
+          </Key>
+          <Property Name="sid" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="xmldocument" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ts" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Exception_SessionError">
+          <End Role="SessionError" Type="ArticleDataDbModel.SessionError" Multiplicity="1" />
+          <End Role="Exception" Type="ArticleDataDbModel.Exception" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SessionError">
+              <PropertyRef Name="SessionErrorID" />
+            </Principal>
+            <Dependent Role="Exception">
+              <PropertyRef Name="SessionErrorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ArticleDataDbModelStoreContainer" CdmEntityContainer="ArticleDataDbEntities">
+          <EntitySetMapping Name="articles"><EntityTypeMapping TypeName="ArticleDataDbModel.article"><MappingFragment StoreEntitySet="article">
+            <ScalarProperty Name="displaygroup" ColumnName="displaygroup" />
+                <ScalarProperty Name="siteid" ColumnName="siteid" />
+            <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+            <ScalarProperty Name="category" ColumnName="category" />
+            <ScalarProperty Name="anchor" ColumnName="anchor" />
+            <ScalarProperty Name="startdate" ColumnName="startdate" />
+            <ScalarProperty Name="enddate" ColumnName="enddate" />
+            <ScalarProperty Name="heading" ColumnName="heading" />
+            <ScalarProperty Name="body" ColumnName="body" />
+            <ScalarProperty Name="relatedArticles" ColumnName="relatedArticles" />
+            <ScalarProperty Name="summary" ColumnName="summary" />
+            <ScalarProperty Name="byline" ColumnName="byline" />
+            <ScalarProperty Name="subtitle" ColumnName="subtitle" />
+            <ScalarProperty Name="seodescription" ColumnName="seodescription" />
+            <ScalarProperty Name="keyword" ColumnName="keyword" />
+            <ScalarProperty Name="imagecount" ColumnName="imagecount" />
+            <ScalarProperty Name="origsite" ColumnName="origsite" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="article_lock"><EntityTypeMapping TypeName="ArticleDataDbModel.article_lock"><MappingFragment StoreEntitySet="article_lock">
+            <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+            <ScalarProperty Name="locked" ColumnName="locked" />
+            <ScalarProperty Name="username" ColumnName="username" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="articleEditOrgs"><EntityTypeMapping TypeName="ArticleDataDbModel.articleEditOrg"><MappingFragment StoreEntitySet="articleEditOrg">
+            <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+            <ScalarProperty Name="heading" ColumnName="heading" />
+            <ScalarProperty Name="summary" ColumnName="summary" />
+            <ScalarProperty Name="byline" ColumnName="byline" />
+            <ScalarProperty Name="body" ColumnName="body" />
+            <ScalarProperty Name="ts" ColumnName="ts" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="assets"><EntityTypeMapping TypeName="ArticleDataDbModel.asset"><MappingFragment StoreEntitySet="asset">
+            <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+            <ScalarProperty Name="asset_uid" ColumnName="asset_uid" />
+            <ScalarProperty Name="asset_type" ColumnName="asset_type" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Exceptions"><EntityTypeMapping TypeName="ArticleDataDbModel.Exception"><MappingFragment StoreEntitySet="Exception">
+            <ScalarProperty Name="ExceptionID" ColumnName="ExceptionID" />
+            <ScalarProperty Name="ExceptionLevel" ColumnName="ExceptionLevel" />
+            <ScalarProperty Name="SessionErrorID" ColumnName="SessionErrorID" />
+            <ScalarProperty Name="Source" ColumnName="Source" />
+            <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+            <ScalarProperty Name="Message" ColumnName="Message" />
+            <ScalarProperty Name="Machine" ColumnName="Machine" />
+            <ScalarProperty Name="TargetSite" ColumnName="TargetSite" />
+            <ScalarProperty Name="ts" ColumnName="ts" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="htmlHoldRules"><EntityTypeMapping TypeName="ArticleDataDbModel.htmlHoldRule"><MappingFragment StoreEntitySet="htmlHoldRules">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="htmltag" ColumnName="htmltag" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Images"><EntityTypeMapping TypeName="ArticleDataDbModel.Image"><MappingFragment StoreEntitySet="Image">
+            <ScalarProperty Name="asset_uid" ColumnName="asset_uid" />
+            <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+            <ScalarProperty Name="position" ColumnName="position" />
+            <ScalarProperty Name="width" ColumnName="width" />
+            <ScalarProperty Name="height" ColumnName="height" />
+            <ScalarProperty Name="media_type" ColumnName="media_type" />
+            <ScalarProperty Name="caption" ColumnName="caption" />
+            <ScalarProperty Name="filesize" ColumnName="filesize" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="image_tracker"><EntityTypeMapping TypeName="ArticleDataDbModel.image_tracker"><MappingFragment StoreEntitySet="image_tracker">
+            <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+            <ScalarProperty Name="asset_uid" ColumnName="asset_uid" />
+            <ScalarProperty Name="siteid" ColumnName="siteid" />
+            <ScalarProperty Name="soft_delete" ColumnName="soft_delete" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="logstatements"><EntityTypeMapping TypeName="ArticleDataDbModel.logstatement"><MappingFragment StoreEntitySet="logstatements">
+            <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+            <ScalarProperty Name="statement" ColumnName="statement" />
+            <ScalarProperty Name="ts" ColumnName="ts" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="MigrationErrors"><EntityTypeMapping TypeName="ArticleDataDbModel.MigrationError"><MappingFragment StoreEntitySet="MigrationError">
+            <ScalarProperty Name="errortype" ColumnName="errortype" />
+                <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+            <ScalarProperty Name="myMessage" ColumnName="myMessage" />
+            <ScalarProperty Name="ts" ColumnName="ts" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="profiles"><EntityTypeMapping TypeName="ArticleDataDbModel.profile"><MappingFragment StoreEntitySet="profile">
+            <ScalarProperty Name="realid" ColumnName="realid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="uri" ColumnName="uri" />
+            <ScalarProperty Name="childcount" ColumnName="childcount" />
+            <ScalarProperty Name="childrenuri" ColumnName="childrenuri" />
+            <ScalarProperty Name="fieldname" ColumnName="fieldname" />
+            <ScalarProperty Name="treelevel" ColumnName="treelevel" />
+            <ScalarProperty Name="parentid" ColumnName="parentid" />
+            <ScalarProperty Name="rootid" ColumnName="rootid" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="saxo_article"><EntityTypeMapping TypeName="ArticleDataDbModel.saxo_article"><MappingFragment StoreEntitySet="saxo_article">
+            <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+            <ScalarProperty Name="siteid" ColumnName="siteid" />
+            <ScalarProperty Name="destination_siteid" ColumnName="destination_siteid" />
+            <ScalarProperty Name="xmldata" ColumnName="xmldata" />
+            <ScalarProperty Name="viewuri" ColumnName="viewuri" />
+            <ScalarProperty Name="storyurl" ColumnName="storyurl" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="saxo_gallery"><EntityTypeMapping TypeName="ArticleDataDbModel.saxo_gallery"><MappingFragment StoreEntitySet="saxo_gallery">
+            <ScalarProperty Name="destination_siteid" ColumnName="destination_siteid" />
+            <ScalarProperty Name="article_uid" ColumnName="article_uid" />
+            <ScalarProperty Name="gallery_uid" ColumnName="gallery_uid" />
+            <ScalarProperty Name="similarity" ColumnName="similarity" />
+            <ScalarProperty Name="edit" ColumnName="edit" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="saxo_image"><EntityTypeMapping TypeName="ArticleDataDbModel.saxo_image"><MappingFragment StoreEntitySet="saxo_image">
+            <ScalarProperty Name="asset_uid" ColumnName="asset_uid" />
+            <ScalarProperty Name="url" ColumnName="url" />
+            <ScalarProperty Name="destination_siteid" ColumnName="destination_siteid" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="saxo_pubMap"><EntityTypeMapping TypeName="ArticleDataDbModel.saxo_pubMap"><MappingFragment StoreEntitySet="saxo_pubMap">
+            <ScalarProperty Name="sectionmapcomplete" ColumnName="sectionmapcomplete" />
+                <ScalarProperty Name="taxonomyPubId" ColumnName="taxonomyPubId" />
+                <ScalarProperty Name="saxoname" ColumnName="saxoname" />
+                <ScalarProperty Name="siteid" ColumnName="siteid" />
+            <ScalarProperty Name="pubname" ColumnName="pubname" />
+            <ScalarProperty Name="destination_siteid" ColumnName="destination_siteid" />
+            <ScalarProperty Name="OWStarget" ColumnName="OWStarget" />
+            <ScalarProperty Name="OWSViewSearch" ColumnName="OWSViewSearch" />
+            <ScalarProperty Name="OWSViewReplace" ColumnName="OWSViewReplace" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sectionAnchorMaps"><EntityTypeMapping TypeName="ArticleDataDbModel.sectionAnchorMap"><MappingFragment StoreEntitySet="sectionAnchorMap">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="siteid" ColumnName="siteid" />
+            <ScalarProperty Name="sectionAnchor" ColumnName="sectionAnchor" />
+            <ScalarProperty Name="sectionName" ColumnName="sectionName" />
+            <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+            <ScalarProperty Name="ProfileId2" ColumnName="ProfileId2" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SessionErrors"><EntityTypeMapping TypeName="ArticleDataDbModel.SessionError"><MappingFragment StoreEntitySet="SessionError">
+            <ScalarProperty Name="SessionErrorID" ColumnName="SessionErrorID" />
+            <ScalarProperty Name="SID" ColumnName="SID" />
+            <ScalarProperty Name="RequestMethod" ColumnName="RequestMethod" />
+            <ScalarProperty Name="ServerPort" ColumnName="ServerPort" />
+            <ScalarProperty Name="HTTPS" ColumnName="HTTPS" />
+            <ScalarProperty Name="LocalAddr" ColumnName="LocalAddr" />
+            <ScalarProperty Name="HostAddress" ColumnName="HostAddress" />
+            <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+            <ScalarProperty Name="URL" ColumnName="URL" />
+            <ScalarProperty Name="CustomerRefID" ColumnName="CustomerRefID" />
+            <ScalarProperty Name="FormData" ColumnName="FormData" />
+            <ScalarProperty Name="AllHTTP" ColumnName="AllHTTP" />
+            <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+            <ScalarProperty Name="IsCookieLess" ColumnName="IsCookieLess" />
+            <ScalarProperty Name="IsNewSession" ColumnName="IsNewSession" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tracksessions"><EntityTypeMapping TypeName="ArticleDataDbModel.tracksession"><MappingFragment StoreEntitySet="tracksession">
+            <ScalarProperty Name="sid" ColumnName="sid" />
+            <ScalarProperty Name="xmldocument" ColumnName="xmldocument" />
+            <ScalarProperty Name="ts" ColumnName="ts" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ArticleDataDbModel" ZoomLevel="86">
+        <EntityTypeShape EntityType="ArticleDataDbModel.article" Width="1.5" PointX="5.75" PointY="0.75" Height="4.0956022135416656" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.article_lock" Width="1.5" PointX="2.75" PointY="5.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.articleEditOrg" Width="1.5" PointX="4.75" PointY="5.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.asset" Width="1.5" PointX="6.75" PointY="5.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.Exception" Width="1.5" PointX="3" PointY="1.625" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.htmlHoldRule" Width="1.5" PointX="7.75" PointY="0.75" Height="1.4033821614583326" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.Image" Width="1.5" PointX="0.75" PointY="8.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.image_tracker" Width="1.5" PointX="2.75" PointY="8.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.logstatement" Width="1.5" PointX="8.75" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.MigrationError" Width="1.5" PointX="4.75" PointY="8.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.profile" Width="1.5" PointX="8.75" PointY="6.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.saxo_article" Width="1.5" PointX="9.75" PointY="0.75" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.saxo_gallery" Width="1.5" PointX="10.75" PointY="6.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.saxo_image" Width="1.5" PointX="6.75" PointY="10.75" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.saxo_pubMap" Width="1.5" PointX="8.75" PointY="10.75" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.sectionAnchorMap" Width="1.5" PointX="10.75" PointY="9.75" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.SessionError" Width="1.5" PointX="0.75" PointY="1" Height="4.0956022135416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArticleDataDbModel.tracksession" Width="1.5" PointX="11.75" PointY="0.75" Height="1.5956835937500031" IsExpanded="true" />
+        <AssociationConnector Association="ArticleDataDbModel.FK_Exception_SessionError" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.0958968098958328" />
+          <ConnectorPoint PointX="3" PointY="3.0958968098958328" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

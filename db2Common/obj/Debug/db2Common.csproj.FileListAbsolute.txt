@@ -1,0 +1,12 @@
+C:\Applications\ArticleDataServiceMigration\db2Common\bin\Debug\db2Common.dll
+C:\Applications\ArticleDataServiceMigration\db2Common\bin\Debug\db2Common.pdb
+C:\Applications\ArticleDataServiceMigration\db2Common\bin\Debug\IBM.Data.DB2.dll
+C:\Applications\ArticleDataServiceMigration\db2Common\obj\Debug\ResolveAssemblyReference.cache
+C:\Applications\ArticleDataServiceMigration\db2Common\obj\Debug\db2Common.dll
+C:\Applications\ArticleDataServiceMigration\db2Common\obj\Debug\db2Common.pdb
+C:\apps\ArticleDataServiceMigration\db2Common\bin\Debug\db2Common.dll
+C:\apps\ArticleDataServiceMigration\db2Common\bin\Debug\db2Common.pdb
+C:\apps\ArticleDataServiceMigration\db2Common\bin\Debug\IBM.Data.DB2.dll
+C:\apps\ArticleDataServiceMigration\db2Common\obj\Debug\ResolveAssemblyReference.cache
+C:\apps\ArticleDataServiceMigration\db2Common\obj\Debug\db2Common.dll
+C:\apps\ArticleDataServiceMigration\db2Common\obj\Debug\db2Common.pdb
