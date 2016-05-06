@@ -167,6 +167,12 @@ namespace Migration
             loopcount += 1;
             System.IO.File.WriteAllText(looplog, "Iteration " + loopcount + " at " + DateTime.Now.ToString());
             DataSet ds = BusinessRule.BusinessRule.BusGetDataset(sqlstatement);
+            BusinessRule.BusinessRule._NGPS_DisplayGroupList = Migration2WP.Preload.GetDisplayGroups(siteid);
+            BusinessRule.BusinessRule._wpCategories = Migration2WP.Preload.GetTerms(siteid, destination_siteid, "category");
+            BusinessRule.BusinessRule._wpTags = Migration2WP.Preload.GetTerms(siteid, destination_siteid, "post_tag");
+            BusinessRule.BusinessRule._wpLocation = Migration2WP.Preload.GetTerms(siteid, destination_siteid, "location");
+            BusinessRule.BusinessRule._wpAuthTerms = Migration2WP.Preload.GetTerms(siteid, destination_siteid, "author");
+
             migrateArticles(taxpubid, siteid, startdate, stopdate, destination_siteid, documents, temp, cmsData, defaultAuthorTermID, holdrules, imageCheckSQL, ds);
             //} //while
 
@@ -196,7 +202,7 @@ namespace Migration
             {
                 Console.WriteLine("End: {0}", DateTime.Now.ToString());
             }
-            wait();
+            //wait();
             return;
         } // Main
 

@@ -114,6 +114,10 @@
       <Project>{33A5DFD0-145A-4924-8FBE-1BADF84020BF}</Project>
       <Name>DbCommon</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WordPressClient\WordPressClient.csproj">
+      <Project>{F8D1FAC9-E90C-49EE-B7CD-A7E64EA568EB}</Project>
+      <Name>WordPressClient</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

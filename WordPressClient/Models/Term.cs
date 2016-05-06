@@ -7,25 +7,25 @@ using Newtonsoft.Json.Linq;
 
 namespace com.DFM.FeedHub.WordPressClient.Models
 {
-    public class Category
+    public class Term
     {
-        public Category() { }
+        public Term() { }
 
-        public static Category FromJson(String json)
+        public static Term FromJson(String json)
         {
             JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
-            Category category = jsonSerializer.Deserialize<Category>(json);
+            Term category = jsonSerializer.Deserialize<Term>(json);
             return category;
         }
-        public static List<Category> ListFromJson(String json)
+        public static List<Term> ListFromJson(String json)
         {
-            List<Category> lc = new List<Category>();
+            List<Term> lc = new List<Term>();
             JArray a = JArray.Parse(json);
 
             foreach (JObject o in a.Children<JObject>())
             {
                 string j = JsonConvert.SerializeObject(o);
-                lc.Add(JsonConvert.DeserializeObject<Category>(j));
+                lc.Add(JsonConvert.DeserializeObject<Term>(j));
             }
             return lc;
         }
@@ -43,14 +43,14 @@ namespace com.DFM.FeedHub.WordPressClient.Models
             return stringwriter.ToString();
         }
 
-        public int id { get; set; }
-        public int count { get; set; }
+        public Int16 id { get; set; }
+        public Int32 count { get; set; }
         public string description { get; set; }
         public string link { get; set; }
         public string name { get; set; }
         public string slug { get; set; }
         public string taxonomy { get; set; }
-        public int parent { get; set; }
+        public Int16 parent { get; set; }
         public Links _links { get; set; }
     }
 }

@@ -6,6 +6,7 @@ Imports System.Xml.Xsl
 Imports System.Text
 Imports System.Text.RegularExpressions
 Imports System.Web
+Imports com.DFM.FeedHub.WordPressClient.Models
 
 Public Class DataAuthentication
 
@@ -37,6 +38,10 @@ Public Class DataAuthentication
 
     Public Shared Function GetSectionMap(ByVal site_uid As String) As System.Data.DataSet
         Return GetDataSet(String.Format("SELECT [site_uid],[group_id],[group_name],[wp_section_list],[wp_tag_slug_list],[wp_location_list] FROM [dbo].[ngps2wp_group_map] where site_uid = '{0}'", site_uid))
+    End Function
+
+    Public Shared Function GetWPTerms(ByVal siteid As String, ByVal destination_siteid As String, ByVal taxonomy As String) As System.Data.DataSet
+        Return GetDataSet(String.Format("SELECT [siteid],[destination_siteid],[id],[count],[description],[name],[slug],[taxonomy],[parent] FROM [dbo].[wp_terms] where [siteid] = '{0}' AND [destination_siteid] = '{1}' AND [taxonomy] = '{2}'", siteid, destination_siteid, taxonomy))
     End Function
 
     Public Shared Function ArticleResent(ByVal article_uid As String, ByVal sent As Boolean) As String
@@ -265,6 +270,14 @@ Public Class DataAuthentication
             Return False
         End If
     End Function
+
+    Public Shared Sub StoreTerms(ByVal terms As List(Of Term))
+        Dim DataDBdb As New DbCommon.dbcommon
+        For Each term As Term In terms
+            Dim term_in As String = String.Format("insert into wp_terms ([id],[count],[description],[name],[slug],[taxonomy],[parent]) values ({0}, {1}, '{2}', '{3}', '{4}', '{5}', {6})", term.id, term.count, term.description.Replace("'", "''"), term.name.Replace("'", "''"), term.slug, term.taxonomy, term.parent)
+            DataDBdb.CreateCommand(term_in)
+        Next
+    End Sub
 
     Public Shared Function CreateCommand(ByVal querystring As String) As Integer
         Dim DataDBdb As New DbCommon.dbcommon

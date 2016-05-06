@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Preload.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,9 +64,17 @@
       <Project>{96c28293-176a-4e0d-8459-dc670ad0b054}</Project>
       <Name>BusinessRule</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataAuthentication\DataAuthentication.vbproj">
+      <Project>{A2D8CB4D-E197-4125-A014-4F14C6273741}</Project>
+      <Name>DataAuthentication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NDesk\NDesk.csproj">
       <Project>{22f72e81-9cf7-4266-bbcd-a22557e3d0b6}</Project>
       <Name>NDesk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WordPressClient\WordPressClient.csproj">
+      <Project>{F8D1FAC9-E90C-49EE-B7CD-A7E64EA568EB}</Project>
+      <Name>WordPressClient</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

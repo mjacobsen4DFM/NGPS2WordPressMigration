@@ -44,13 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Term.cs" />
     <Compile Include="Models\Common.cs" />
-    <Compile Include="Models\GuestAuthor.cs" />
     <Compile Include="Models\Post.cs" />
-    <Compile Include="Models\Tag.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="WebClient.cs">
       <SubType>Component</SubType>
     </Compile>

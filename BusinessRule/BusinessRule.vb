@@ -13,15 +13,14 @@ Imports com.DFM.FeedHub.WordPressClient.Models
 
 Public Class BusinessRule
 
-    Public Shared _wpCategories As List(Of Category)
-    Public Shared _wpTags As List(Of Tag)
-    Public Shared _wpLocation As List(Of Location)
-    Public Shared _wpAuthTags As List(Of Tag)
     Public Shared _ImageCheckSQL As String
 
+    Public Shared _wpCategories As List(Of Term)
+    Public Shared _wpTags As List(Of Term)
+    Public Shared _wpLocation As List(Of Term)
+    Public Shared _wpAuthTerms As List(Of Term)
 
     Public Shared _NGPS_DisplayGroupList As New List(Of NGPS_DisplayGroup2WP_SectionMap)
-    Public Shared _NGPS_CategoryList As New List(Of NGPS_Category2WP_TagMap)
 
     'replacement props
     Public Shared _wpc As WordPressClient
@@ -98,88 +97,23 @@ Public Class BusinessRule
             Dim ds As DataSet = DataAuthentication.DataAuthentication.GetDataSet(sqlstatement)
 
             Dim articleRow As DataRow = ds.Tables(0).Rows(0)
-            Dim dsCategories As DataSet
-            Dim tagDsCategories As New Dictionary(Of String, String)
-            'Dim dsTags As DataSet
-            Dim tagDsMap As New Dictionary(Of String, String)
 
-            'Get indicative data from WP
-            If (_wpCategories Is Nothing) Then
-                Console.WriteLine("Getting Categories & Groups")
-                'WP Category = NGPS Section
-                dsCategories = DataAuthentication.DataAuthentication.GetSectionMap(siteid)
-
-                Dim displayGroupMap As New NGPS_DisplayGroup2WP_SectionMap()
-
-                For Each r As DataRow In dsCategories.Tables(0).Rows
-                    displayGroupMap = New NGPS_DisplayGroup2WP_SectionMap()
-                    displayGroupMap.site_uid = r.Item("site_uid").ToString()
-                    displayGroupMap.group_id = r.Item("group_id").ToString()
-                    displayGroupMap.group_name = r.Item("group_name").ToString()
-                    displayGroupMap.wp_section_list = r.Item("wp_section_list").ToString().Replace(", ", ",").Split(",").ToList()
-                    displayGroupMap.wp_tag_slug_list = r.Item("wp_tag_slug_list").ToString().Replace(", ", ",").Split(",").ToList()
-                    displayGroupMap.wp_location_list = r.Item("wp_location_list").ToString().Replace(", ", ",").Split(",").ToList()
-                    If (Not _NGPS_DisplayGroupList.Contains(displayGroupMap)) Then _NGPS_DisplayGroupList.Add(displayGroupMap)
-                Next
-
-                'Get categories via StormFront
-                Dim categoryMap As Dictionary(Of String, Object) = _wpc.getAll("posts/", "wp/v2/categories/?per_page=100")
-                Dim categoryJson As String = categoryMap("body")
-                _wpCategories = Category.ListFromJson(categoryJson)
-                Console.WriteLine()
-            End If
-
-            If (_wpTags Is Nothing) Then
-                Console.WriteLine("Getting Tags")
-
-                'Get tags via StormFront
-                Dim tagMap As Dictionary(Of String, Object) = _wpc.getAll("posts/", "wp/v2/tags/?per_page=100")
-                Dim tagJson As String = tagMap("body")
-                _wpTags = Tag.ListFromJson(tagJson)
-                Console.WriteLine()
-            End If
-
-            If (_wpLocation Is Nothing) Then
-                Console.WriteLine("Getting Location Tags")
-
-                'Get location terms via StormFront
-                Dim locMap As Dictionary(Of String, Object) = _wpc.getAll("posts/", "wp/v2/location/?per_page=100")
-                Dim locJson As String = locMap("body")
-                _wpLocation = Location.ListFromJson(locJson)
-                Console.WriteLine()
-            End If
-
-            If (_wpAuthTags Is Nothing) Then
-                Console.WriteLine("Getting Author Tags")
-
-                'Get co-authors via StormFront
-                Dim authMap As Dictionary(Of String, Object) = _wpc.get("posts/", "co-authors/v1/author-terms/?per_page=100")
-                Dim authJson As String = authMap("body")
-                _wpAuthTags = Tag.ListFromJson(authJson)
-                Console.WriteLine()
-            End If
-
-            If (_wpCategories Is Nothing OrElse _wpTags Is Nothing OrElse _wpLocation Is Nothing OrElse _wpAuthTags Is Nothing) Then
-                Console.WriteLine("One or more collections are empty: _wpCategories Is Nothing? {0} _wpTags Is Nothing? {1} _wpLocation Is Nothing? {2} _wpAuthTags Is Nothing? {3} ", _wpCategories Is Nothing, _wpTags Is Nothing, _wpLocation Is Nothing, _wpAuthTags Is Nothing)
-                Return False
-            End If
-
-            'post and tags for later
+            'post and terms for later
             Dim wpPost As New Post()
-            Dim tagList As New List(Of Integer)
+            Dim termList As New List(Of Integer)
 
             'Match article data to indicitive data
             Dim displaygroups As String = articleRow("displaygroup").ToString
-            tagList = SetNGPSDisplayGroup2Tags(displaygroups)
-            DataAuthentication.DataAuthentication.spExecute("insert_wp_data", _message, "@article_uid", article_uid, "@datatype", "tagList", "@data", String.Join(",", tagList), "@object", String.Empty)
+            termList = SetNGPSDisplayGroup2Terms(displaygroups)
+            DataAuthentication.DataAuthentication.spExecute("insert_wp_data", _message, "@article_uid", article_uid, "@datatype", "termList", "@data", String.Join(",", termList), "@object", String.Empty)
 
             'Find authors
             Dim byline As String = articleRow("byline").ToString
             Dim email As String = articleRow("email").ToString
-            Dim capTermQueue As List(Of Tag) = SetCoAuthors(article_uid, byline, email, cmsname, defaultGuestAuthorTermId)
+            Dim capTermQueue As List(Of Term) = SetCoAuthors(article_uid, byline, email, cmsname, defaultGuestAuthorTermId)
 
             Dim authNames As String = ""
-            For Each capTerm As Tag In capTermQueue
+            For Each capTerm As Term In capTermQueue
                 authNames &= String.Format("({0})", capTerm.name)
             Next
             DataAuthentication.DataAuthentication.spExecute("insert_wp_data", _message, "@article_uid", article_uid, "@datatype", "authNames", "@data", authNames, "@object", String.Empty)
@@ -216,9 +150,9 @@ Public Class BusinessRule
                         .date_gmt = fixDate(wpPosted.date_gmt),
                         .status = "publish"
                     }
-                    If (wpPosted.categories IsNot Nothing) Then tagList.AddRange(wpPosted.categories)
-                    If (wpPosted.tags IsNot Nothing) Then tagList.AddRange(wpPosted.tags)
-                    If (wpPosted.location IsNot Nothing) Then tagList.AddRange(wpPosted.location)
+                    If (wpPosted.categories IsNot Nothing) Then termList.AddRange(wpPosted.categories)
+                    If (wpPosted.tags IsNot Nothing) Then termList.AddRange(wpPosted.tags)
+                    If (wpPosted.location IsNot Nothing) Then termList.AddRange(wpPosted.location)
                 End If
             Else
                 'New article
@@ -237,9 +171,9 @@ Public Class BusinessRule
             End If
 
             'Add all the tags to the appropriate terms
-            wpPost.categories = tagList
-            wpPost.tags = tagList
-            wpPost.location = tagList
+            wpPost.categories = termList
+            wpPost.tags = termList
+            wpPost.location = termList
 
             ''POST ARTICLE
             Dim articleJson As String = wpPost.ToJSON()
@@ -282,13 +216,13 @@ Public Class BusinessRule
                 Dim canonical_url As String = String.Format("http://{0}/{1}/ci_{2}/{3}", articleRow("site_url").ToString.Trim("/"), articleRow("vanity_url").ToString.Trim("/"), article_uid, articleRow("seodescription").ToString.Trim("/"))
                 'Build list of meta values
                 Dim customFields As Dictionary(Of String, String) = New Dictionary(Of String, String)()
-                customFields.Add("original_source", canonical_url)
+                'customFields.Add("original_source", canonical_url)
                 customFields.Add("original_byline", articleRow("byline").ToString)
-                customFields.Add("discovered_authors", authNames)
-                customFields.Add("original_email", articleRow("email").ToString)
-                customFields.Add("original_pubdate", articleRow("startdate").ToString())
+                'customFields.Add("discovered_authors", authNames)
+                'customFields.Add("original_email", articleRow("email").ToString)
+                'customFields.Add("original_pubdate", articleRow("startdate").ToString())
                 customFields.Add("original_id", article_uid)
-                customFields.Add("original_category", articleRow("category").ToString())
+                'customFields.Add("original_category", articleRow("category").ToString())
 
                 ''MIGRATE IMAGES
                 Dim imageMap As Dictionary(Of String, String) = PostImages(article_uid, destination_siteid, wpPostId, wpPostLocation, defaultAuthorId)
@@ -315,7 +249,7 @@ Public Class BusinessRule
                 Dim capJsonBase As String = ""
                 Dim capJson As String = ""
                 Dim caps As List(Of Int16) = New List(Of Int16)
-                For Each capTerm As Tag In capTermQueue
+                For Each capTerm As Term In capTermQueue
                     caps.Add(capTerm.id)
                 Next
                 capJsonBase = String.Format(capJsonFormat, String.Join(",", caps.ToArray()))
@@ -573,14 +507,14 @@ Public Class BusinessRule
         Next
     End Sub
 
-    Private Shared Function SetNGPSDisplayGroup2Tags(ByVal displayGroups As String) As List(Of Integer)
-        Dim tags As List(Of Integer) = New List(Of Integer)()
-        Dim catMatch As IEnumerable(Of Category)
-        Dim tagMatch As IEnumerable(Of Tag)
-        Dim locationMatch As IEnumerable(Of Location)
+    Private Shared Function SetNGPSDisplayGroup2Terms(ByVal displayGroups As String) As List(Of Integer)
+        Dim terms As List(Of Integer) = New List(Of Integer)()
+        Dim catMatch As IEnumerable(Of Term)
+        Dim termMatch As IEnumerable(Of Term)
+        Dim locationMatch As IEnumerable(Of Term)
         Dim iDisplayGroupList As IEnumerable(Of NGPS_DisplayGroup2WP_SectionMap)
-        Dim parentCat As Category
-        Dim parentLoc As Location
+        Dim parentCat As Term
+        Dim parentLoc As Term
 
         Dim displayGroupList As List(Of String) = displayGroups.Split(",").ToList()
 
@@ -593,35 +527,35 @@ Public Class BusinessRule
                             'Section
                             For Each section_name As String In displayGroupItem.wp_section_list
                                 catMatch = From catFinder In _wpCategories Where catFinder.name.Trim().ToLower() = section_name.Replace("&", "&amp;").Trim().ToLower()
-                                For Each categoryFound As Category In catMatch
-                                    If (Not tags.Contains(categoryFound.id)) Then tags.Add(categoryFound.id)
+                                For Each categoryFound As Term In catMatch
+                                    If (Not terms.Contains(categoryFound.id)) Then terms.Add(categoryFound.id)
                                     parentCat = categoryFound
                                     While parentCat.parent <> 0
                                         'This category has a parent: look it up
                                         parentCat = _wpCategories.Where(Function(cat) cat.id = parentCat.parent).ToList()(0)
-                                        If (Not tags.Contains(parentCat.id)) Then tags.Add(parentCat.id)
+                                        If (Not terms.Contains(parentCat.id)) Then terms.Add(parentCat.id)
                                     End While
                                 Next
                             Next
 
                             'Tag
                             For Each tag_slug As String In displayGroupItem.wp_tag_slug_list
-                                tagMatch = From tagFinder In _wpTags Where tagFinder.slug.Trim().ToLower() = tag_slug.Trim().ToLower()
-                                For Each tagFound As Tag In tagMatch
-                                    If (Not tags.Contains(tagFound.id)) Then tags.Add(tagFound.id)
+                                termMatch = From tagFinder In _wpTags Where tagFinder.slug.Trim().ToLower() = tag_slug.Trim().ToLower()
+                                For Each tagFound As Term In termMatch
+                                    If (Not terms.Contains(tagFound.id)) Then terms.Add(tagFound.id)
                                 Next
                             Next
 
                             'Location
                             For Each location_name As String In displayGroupItem.wp_location_list
                                 locationMatch = From locationFinder In _wpLocation Where locationFinder.name.Trim().ToLower() = location_name.Trim().ToLower()
-                                For Each locationFound As Location In locationMatch
-                                    If (Not tags.Contains(locationFound.id)) Then tags.Add(locationFound.id)
+                                For Each locationFound As Term In locationMatch
+                                    If (Not terms.Contains(locationFound.id)) Then terms.Add(locationFound.id)
                                     parentLoc = locationFound
                                     While parentLoc.parent <> 0
                                         'This category has a parent: look it up
                                         parentLoc = _wpLocation.Where(Function(loc) loc.id = parentLoc.parent).ToList()(0)
-                                        If (Not tags.Contains(parentLoc.id)) Then tags.Add(parentLoc.id)
+                                        If (Not terms.Contains(parentLoc.id)) Then terms.Add(parentLoc.id)
                                     End While
                                 Next
                             Next
@@ -631,13 +565,13 @@ Public Class BusinessRule
             Next
         End If
 
-        Return tags
+        Return terms
     End Function
 
-    Private Shared Function SetCoAuthors(ByVal article_uid As String, ByVal byline As String, ByVal email As String, ByVal cmsname As String, ByVal defaultAuthorTermID As Integer) As List(Of Tag)
-        Dim qAuthorTerms As New List(Of Tag)
-        Dim tagMatch As List(Of Tag) = New List(Of Tag)
-        Dim tag As New Tag()
+    Private Shared Function SetCoAuthors(ByVal article_uid As String, ByVal byline As String, ByVal email As String, ByVal cmsname As String, ByVal defaultAuthorTermID As Integer) As List(Of Term)
+        Dim qAuthorTerms As New List(Of Term)
+        Dim termMatch As List(Of Term) = New List(Of Term)
+        Dim term As New Term()
         Dim bfound As Boolean = False
         Dim sqlstatement As String = String.Format("SELECT DISTINCT [searchname], [source] FROM [ArticleDataDb].[dbo].[ngps_byline_author_sources] WHERE [byline] = '{0}'", byline)
         Dim id As Integer = 0
@@ -648,7 +582,7 @@ Public Class BusinessRule
 
             Dim dsAuthors As DataSet = BusGetDataset(sqlstatement)
             For Each drAuthor As DataRow In dsAuthors.Tables(0).Rows
-                tag = New Tag()
+                term = New Term()
                 searchname = drAuthor.Item("searchname").ToString()
                 source = drAuthor.Item("source").ToString()
 
@@ -658,24 +592,24 @@ Public Class BusinessRule
                 Try
                     'Match to display name as parsed from byline (fuzzy)
                     If (Not String.IsNullOrEmpty(searchname)) Then
-                        tagMatch = _wpAuthTags.Where(Function(tagFinder)
-                                                         Return tagFinder.description.ToLower().Contains(String.Format(" {0}", searchname.ToString.ToLower().Trim()))
-                                                     End Function).ToList()
-                        If (tagMatch.Count <> 0) Then
+                        termMatch = _wpAuthTerms.Where(Function(termFinder)
+                                                           Return termFinder.description.ToLower().Contains(String.Format(" {0}", searchname.ToString.ToLower().Trim()))
+                                                       End Function).ToList()
+                        If (termMatch.Count <> 0) Then
                             'Found a match!
-                            If (Not qAuthorTerms.Contains(tagMatch.Item(0))) Then qAuthorTerms.Add(tagMatch.Item(0))
+                            If (Not qAuthorTerms.Contains(termMatch.Item(0))) Then qAuthorTerms.Add(termMatch.Item(0))
                             bfound = True
                         End If
                     End If
 
                     'If the neither source or cmsname are empty and the source is not this cmsname, then add that as an "author"
                     If (Not String.IsNullOrEmpty(source) AndAlso Not String.IsNullOrEmpty(cmsname) AndAlso source <> cmsname) Then
-                        tagMatch = _wpAuthTags.Where(Function(tagFinder)
-                                                         Return tagFinder.name.ToLower() = source.ToString.ToLower().Trim()
-                                                     End Function).ToList()
-                        If (tagMatch.Count <> 0) Then
+                        termMatch = _wpAuthTerms.Where(Function(termFinder)
+                                                           Return termFinder.name.ToLower() = source.ToString.ToLower().Trim()
+                                                       End Function).ToList()
+                        If (termMatch.Count <> 0) Then
                             'Found a match!
-                            If (Not qAuthorTerms.Contains(tagMatch.Item(0))) Then qAuthorTerms.Add(tagMatch.Item(0))
+                            If (Not qAuthorTerms.Contains(termMatch.Item(0))) Then qAuthorTerms.Add(termMatch.Item(0))
                             bfound = True
                         End If
                     End If
@@ -693,12 +627,12 @@ Public Class BusinessRule
         If (Not bfound) Then
             'Match to email argument; taken directly from migration DB
             If (Not String.IsNullOrEmpty(email)) Then
-                tagMatch = _wpAuthTags.Where(Function(tagFinder)
-                                                 Return tagFinder.description.ToLower().Contains(String.Format(" {0}", email.ToLower().Trim()))
-                                             End Function).ToList()
-                If (tagMatch.Count <> 0) Then
+                termMatch = _wpAuthTerms.Where(Function(termFinder)
+                                                   Return termFinder.description.ToLower().Contains(String.Format(" {0}", email.ToLower().Trim()))
+                                               End Function).ToList()
+                If (termMatch.Count <> 0) Then
                     'Found a match!
-                    If (Not qAuthorTerms.Contains(tagMatch.Item(0))) Then qAuthorTerms.Add(tagMatch.Item(0))
+                    If (Not qAuthorTerms.Contains(termMatch.Item(0))) Then qAuthorTerms.Add(termMatch.Item(0))
                     bfound = True
                 End If
             End If
@@ -707,12 +641,12 @@ Public Class BusinessRule
         If (Not bfound) Then
             'Match to byline source
             If (Not String.IsNullOrEmpty(source)) Then
-                tagMatch = _wpAuthTags.Where(Function(tagFinder)
-                                                 Return tagFinder.name.ToLower() = source.ToLower().Trim()
-                                             End Function).ToList()
-                If (tagMatch.Count <> 0) Then
+                termMatch = _wpAuthTerms.Where(Function(termFinder)
+                                                   Return termFinder.name.ToLower() = source.ToLower().Trim()
+                                               End Function).ToList()
+                If (termMatch.Count <> 0) Then
                     'Found a match!
-                    If (Not qAuthorTerms.Contains(tagMatch.Item(0))) Then qAuthorTerms.Add(tagMatch.Item(0))
+                    If (Not qAuthorTerms.Contains(termMatch.Item(0))) Then qAuthorTerms.Add(termMatch.Item(0))
                     bfound = True
                 End If
             End If
@@ -720,10 +654,10 @@ Public Class BusinessRule
 
         If (Not bfound) Then
             'Nothing was found; we really shouldn't get here!
-            tagMatch = _wpAuthTags.Where(Function(tagFinder) tagFinder.id = defaultAuthorTermID).ToList()
-            If (tagMatch.Count <> 0) Then
+            termMatch = _wpAuthTerms.Where(Function(termFinder) termFinder.id = defaultAuthorTermID).ToList()
+            If (termMatch.Count <> 0) Then
                 'Found a match!
-                If (Not qAuthorTerms.Contains(tagMatch.Item(0))) Then qAuthorTerms.Add(tagMatch.Item(0))
+                If (Not qAuthorTerms.Contains(termMatch.Item(0))) Then qAuthorTerms.Add(termMatch.Item(0))
             End If
             DataAuthentication.DataAuthentication.spExecute("MigrationErrors", "", "@article_uid", article_uid, "@myMessage", String.Format("No authors were found for {0}", byline), "@errorType", 1)
         End If

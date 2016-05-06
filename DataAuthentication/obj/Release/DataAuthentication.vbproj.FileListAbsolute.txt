@@ -67,3 +67,7 @@ C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NG
 C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\obj\Release\DataAuthentication.dll
 C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\obj\Release\DataAuthentication.xml
 C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\obj\Release\DataAuthentication.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\bin\Release\WordPressClient.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\bin\Release\Newtonsoft.Json.dll
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\bin\Release\WordPressClient.pdb
+C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\DataAuthentication\bin\Release\Newtonsoft.Json.xml

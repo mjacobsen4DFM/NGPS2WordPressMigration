@@ -132,6 +132,10 @@
       <Project>{A2D8CB4D-E197-4125-A014-4F14C6273741}</Project>
       <Name>DataAuthentication</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DbCommon\DbCommon.vbproj">
+      <Project>{33A5DFD0-145A-4924-8FBE-1BADF84020BF}</Project>
+      <Name>DbCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UncAccess\UncAccess.csproj">
       <Project>{EEAB4D74-64C9-488F-98EF-BCE316B5673C}</Project>
       <Name>UncAccess</Name>
