@@ -153,7 +153,7 @@ namespace Migration
             int loopcount = 0;
 
             Int32 defaultAuthorTermID = 370; // 2130 wpd; //370 wpm
-
+            //sqlstatement = "select article_uid from article where article_uid = '29923438'";
             Console.WriteLine(sqlstatement);
             //Intial Migration
             BusinessRule.BusinessRule br = new BusinessRule.BusinessRule();
@@ -202,7 +202,7 @@ namespace Migration
             {
                 Console.WriteLine("End: {0}", DateTime.Now.ToString());
             }
-            //wait();
+            wait();
             return;
         } // Main
 
@@ -214,6 +214,8 @@ namespace Migration
             int articleCount = 0;
             bool status = true;
             DateTime startwatch2 = DateTime.Now;
+
+
 
             Console.WriteLine("Start: {0}", startwatch2.ToString());
             //BusinessRule.BusinessRule.DeleteWPPosts(taxpubid, hostUrl, username, pwd);

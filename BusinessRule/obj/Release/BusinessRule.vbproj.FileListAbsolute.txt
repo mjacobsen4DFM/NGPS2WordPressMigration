@@ -106,7 +106,6 @@ C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NG
 C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Release\UncAccess.pdb
 C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Release\WordPressClient.pdb
 C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Release\DbCommon.pdb
-C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Release\DbCommon.xml
 C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\bin\Release\Newtonsoft.Json.xml
 C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\obj\Release\BusinessRule.vbprojResolveAssemblyReference.cache
 C:\Users\Mick\Documents\Cloud\Google Drive\mjacobsen@denverpost.com\Dev\Mixed\NGPS2WordPressMigration\BusinessRule\obj\Release\BusinessRule.Resources.resources

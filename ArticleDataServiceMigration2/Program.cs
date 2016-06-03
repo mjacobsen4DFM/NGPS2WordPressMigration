@@ -445,7 +445,7 @@ namespace ArticleDataServiceMigration2
             DateTime stopDate = DateTime.ParseExact(endDates[0], "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             LogFileName = Logfiles[0];
 
-            Console.WriteLine("Query NGPS DB");
+            Console.WriteLine("Query NGPS DB for Site: " + siteid + ", StartDate: " + startdate.ToString("MM/dd/yyyy") + ", StopDate: " + stopDate.ToString("MM/dd/yyyy"));
             List<CONTENT_ITEM> ContentItemRows = BusinessModel.GetContentItems(siteid, (int)BusinessModel.asset.article, startdate, stopDate);
             Console.WriteLine("Total Articles: {0} ", ContentItemRows.Count);
             int total = ContentItemRows.Count;
